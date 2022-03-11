@@ -1,0 +1,93 @@
+Schema name of a metadatalink (mdl) named WORK (this mdl is a schema)                           --> %x{$WORK/tech:physicalName()}x%
+
+Schema name and table name of a medatalink (mdl) named MY_TABLE (this mdl is a datastore/table) --> %x{$MY_TABLE/tech:physicalPath()}x%
+
+Path of a metadatalinkg (mdl) named File_List_Folder (this mdl is a folder)                     --> %x{$File_List_Folder/tech:path()}x%
+
+Bind variable value of a variable named FILE_NAME                                               --> :{FILE_NAME}:
+
+Paramater value of a parameter defined in main Process with the name p_file_name                --> ${~/p_file_name}$
+
+Value of the CORE_TEMPORARY_FOLDER session variable                                             --> ${/CORE_TEMPORARY_FOLDER}$
+
+Value of the CORE_SESSION_ID session variable                                                   --> ${/CORE_SESSION_ID}$  
+
+Execution duration of Load FAC_Booking action (in milliseconds)                                 --> ${../Load FACT_Booking/CORE_DURATION}$
+
+Value of the begin date/time of the session                                                     --> ${/CORE_BEGIN_DATE}$
+
+Bind condition on a bind link that test if the bind variable named TIT_CODE is equal to Mrs     --> %b(rhino){ ':{TIT_CODE}:' == 'Mrs' }b(rhino)%
+                                                                                         or         %b(rhino){ ":{TIT_CODE}:".substring(0,3).equals('Mrs') }b(rhino)% 
+
+Generation of a date with the format YYYYMMDD in all the possible place in Stambia              --> %e(rhino){ var now = new Date(); __ctx__.retValue =''+(now.getFullYear()*10000+(now.getMonth() + 1)*100+now.getDate());}e(rhino)%
+(part of File Name expression for example)
+
+Generation of a date with the format YYYYMMDDHHmmSS every where in Stambia                      --> %e(rhino){ var now = new Date(); __ctx__.retValue =''+(now.getFullYear()*10000000000+(now.getMonth() + 1)*100000000+now.getDate()*1000000+now.getHours()*10000+now.getMinutes()*100+now.getSeconds());}e(rhino)% 
+
+Generation of a date with the format YYMMDDHHmmSS if the date >1999                             --> %e(rhino){ var now = new Date(); __ctx__.retValue =''+((now.getFullYear()-2000)*10000000000+(now.getMonth() + 1)*100000000+now.getDate()*1000000+now.getHours()*10000+now.getMinutes()*100+now.getSeconds());}e(rhino)%
+
+Number of rows selected in the main process                                                     --> %e(rhino){__ctx__.sumVariable("SQL_NB_ROWS")}e(rhino)%
+
+Number of SQL INSERT for the action named Load_FACT_BILLING contained in the current process    --> %e(rhino){__ctx__.sumVariable("SQL_STAT_INSERT","../Load FACT_Billing")}e(rhino)%
+
+Decrypt an encrypted value without showing it in the execution details                          --> %s(rhino){ __ctx__.decryptPassword('F88E3627C29347728A4B791601F6B7AE');}s(rhino)%
+
+Reference a table (schema + table) in a query                                                   --> {md:objectPath(ref:schema('HOTEL_DATAMART'),'DIM_BEDROOM')}
+
+Reference a query in another query 								                                --> {ref:query('Query1')/tech:physicalName()}
+
+Reference the full path of a table in a query                                                   --> {mdj:getMdRef(.,'DIM_BEDROOM')/tech:physicalPath()}
+
+Generation condition depending on a parameter                                                   --> '${SEND_EMAIL}$'='true'
+
+Condition on a link that check the number of rows return by a SELECT in a SQL FILE Export       --> ${~/SQLFileExport/SQL_NB_ROWS}$ != 0
+in the main process
+
+Condition on a link to execute the target action of the link if the number of rows of a mapping --> __ctx__.sumVariable("SQL_STAT_INSERT","<my_mapping>") == 0
+MonMapping in this process has no inserted values 
+
+To retrieve the result in a string of a XPATH evaluation (path of a folder) in a rhino script   --> "%x{$outFiles/tech:path()}x%"
+
+Set into a rhino script to a rhino variable the value of a parameter                            --> var my_variable = __ctx__.getVariableValue("~/my_parameter") ;
+
+Publish a parameter in a rhino script                                                           --> __ctx__.publishVariable("~/my_parameter","my_value");
+
+Test the number of execution (3) of an action in a loop to go to the end                        --> ${~/ACTION_NAME/CORE_NB_EXECUTIONS}$ == 3
+
+Retrieve the schema and name of the reject table with the target table data link                --> %x{md:physicalPath($MY_TABLE,'rejectName')}x%
+
+Expression to add to an attach field of a send mail to retrieve the generated file name of a    --> ${~/<WriteTxtFile action name>/TXT_WRITE_FILENAME}$
+write file action
+
+Generation of the current date                                                                  --> %x{md:formatDate("yyyyMMdd")}x%
+
+Generation of the previous date                                                                 --> %x{md:formatDate("yyyyMMdd",-1)}x%
+
+Generation of the next date                                                                     --> %x{md:formatDate("yyyyMMdd",1)}x%
+
+Expression to substitute the schema name + table of a column metadata link                      --> %x{$MY_COLUMN/../tech:physicalPath()}x%
+
+Not exists filter in a mapping (if the not exists table is in the target, set the filter on     --> NOT EXISTS (SELECT 1 FROM  %x{md:objectPath(./ref:schema('<my_schema>'),'<my_table>')}x% <my_table> 
+a stage)                                                                                                        WHERE <filtered_table>.<filtered_column>=<my_table>.<my_column> )
+
+
+Generation of a schema name.table name with 2 metadata links                                    --> %x{md:objectPath($MY_SCHEMA,$MY_TABLE/tech:name())}x%
+
+Generation of a schema name.table name with one metadata link                                   --> %x{md:objectPath($MY_SCHEMA, 'MY_TABLE')}x%
+
+In Xpath, it's necessary to replace the following special characters                            --> "&" by "&amp;"
+                                                                                                    "<simple quote>" by "&apos;"
+                                                                                                    "<double quote>" by "&quot;"
+                                                                                                    "<" by "&lt;"
+                                                                                                    ">" by "&gt;"
+
+Dependant filters on the configuration environment                                              --> CASE WHEN '${/CORE_SESSION_CONFIGURATION}$'='DEV' 
+                                                                                                              THEN T_CUSTOMER.CUS_ID = 1 
+                                                                                                               AND T_CUSTOMER.TIT_CODE='Mr'
+                                                                                                         WHEN '${/CORE_SESSION_CONFIGURATION}$'='PROD' 
+                                                                                                              THEN T_CUSTOMER.CUS_ID = 2 
+                                                                                                              ELSE 1=1
+                                                                                                    END
+
+
+Mettre la date dans un fichier									--> %x{$Export_MDW_WSH_Ventes_Retours/tech:path()}x%\SALES_%x{md:formatDate('yyyy-MM-dd-HHmmss')}x%.txt
