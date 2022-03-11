@@ -1,0 +1,12 @@
+TableA:
+Load
+	NomChamps1,
+	NomChamps2,
+	...
+	NomChampsN;
+SQL
+	Select NomChamps1,
+		NomChamps2,
+		...
+		NomChampsN
+	From TableSource;

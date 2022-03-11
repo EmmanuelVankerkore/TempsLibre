@@ -1,0 +1,12 @@
+temp_table:
+LOAD * INLINE [
+    Variable, Est_correct, Identité
+    'A', 18, 'Roger Trucmuche'
+];
+
+temp_table_2:
+Load *,
+	Right(Identité,9) as [Nom]
+Resident temp_table;
+
+Drop table temp_table;

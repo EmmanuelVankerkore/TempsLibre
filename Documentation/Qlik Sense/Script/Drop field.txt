@@ -1,0 +1,20 @@
+temp_table:
+LOAD * INLINE [
+    Variable, Age
+    A, 10
+    B, 19
+    C, 20
+    D, 200
+    E, 2
+];
+
+temp_table2:
+Load *,
+	if ([Age]<=3, 'oui', 'non') as Bebe,
+	if ([Age]>=18, 'oui', 'non') as Majeur,
+    if ([Age]>=100, 'oui', 'non') as Ancetre
+Resident temp_table;
+
+Drop Field [Age] From temp_table2;
+
+Drop table temp_table;

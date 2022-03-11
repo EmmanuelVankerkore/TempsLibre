@@ -1,0 +1,26 @@
+// n lignes dans la table A
+// m lignes dans la table B
+// n+m+k lignes dans A concatenate B
+// équivalent d'un full join
+
+temp_table:
+LOAD * INLINE [
+    Variable, Est_correct
+    A, 1
+    A, 25
+    B, 1
+    C, 0
+    D, 0
+    E, 2
+];
+
+NoConcatenate
+temp_table2:
+LOAD * INLINE [
+    Variable, Est_incorrect
+    A, 2
+    A, 50
+    B, 3
+    E, 8
+    F, 12
+];

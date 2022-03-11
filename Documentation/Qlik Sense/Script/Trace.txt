@@ -1,0 +1,6 @@
+let var = 'Bonjour';
+let entier = 18;
+
+trace $(var);
+trace $(entier);
+trace Au revoir;

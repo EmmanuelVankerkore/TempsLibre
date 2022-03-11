@@ -1,0 +1,13 @@
+temp_table:
+LOAD * INLINE [
+    Variable, Est_correct
+    A, 1
+    A, 25
+    B, 1
+    C, 0
+    D, 0
+    E, 2
+];
+
+let NombreDeLignes = NoOfRows('temp_table');
+trace $(NombreDeLignes);

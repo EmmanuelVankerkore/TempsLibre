@@ -1,0 +1,16 @@
+temp_table:
+LOAD * INLINE [
+    Variable, Age
+    A, 10
+    B, 19
+    C, 20
+    D, 200
+    E, 2
+];
+
+let cheminDossier = 'xxxx';
+let nomDuQVD = 'tttt.qvd';
+
+STORE temp_table INTO [$(cheminDossier) & $(nomDuQVD)];
+
+Drop table temp_table

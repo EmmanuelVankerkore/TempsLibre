@@ -1,0 +1,13 @@
+temp_table:
+LOAD * INLINE [
+    Variable, Email
+    'A', 'emmanuel.v@outlook.com'
+];
+
+temp_table_2:
+Load *,
+	Subfield(Email, '@', 1) as [Identite],
+	Subfield(Email, '@', 2) as [Ressource]
+Resident temp_table;
+
+Drop table temp_table;

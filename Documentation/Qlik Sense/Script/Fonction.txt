@@ -1,0 +1,13 @@
+sub log(LogMessage) 
+  let vTime = localtime ('Paris') ;
+  let vSeparateur = '******************************************';
+  trace $(vSeparateur);
+  trace $(vTime) : ;
+  trace $(LogMessage);
+  trace $(vSeparateur);
+  let vTime=;
+  let vSeparateur=;
+end sub;
+
+// let vMessageLog = 'Initialisation des variables et des tables de mapping';
+// call log('$(vMessageLog)');

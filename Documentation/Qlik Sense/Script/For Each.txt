@@ -1,0 +1,14 @@
+temp_table:
+LOAD * INLINE [
+    Variable, Est_correct
+    A, 1
+    A, 5
+    B, 8
+    C, 10
+    D, 30
+    E, 2000
+];
+
+For Each element in FieldValueList('Est_correct')
+	Trace $(element);
+Next element

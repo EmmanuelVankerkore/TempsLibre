@@ -1,0 +1,10 @@
+let debut = 1;
+let fin = 10;
+let increment = 1;
+
+for i = $(debut) to $(fin) step $(increment)
+	trace $(i);
+next
+
+let debut =;
+let fin =;
