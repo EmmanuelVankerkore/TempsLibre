@@ -1,0 +1,83 @@
+package entities;
+
+import java.util.ArrayList;
+
+public class Client {
+
+	static Integer compteur = 10000;
+	String Nom;
+	String Prenom;
+	Integer Age;
+	Integer NumeroClient;
+	ArrayList<Compte> comptes;	
+	
+	public Client(String nom, String prenom, Integer age) {
+		setNumeroClient();
+		setAge(age);
+		setNom(nom);
+		setPrenom(prenom);
+		comptes = new ArrayList<Compte>(5);
+		compteur++;
+	}
+
+	public String getNom() {
+		return Nom;
+	}
+
+	public void setNom(String nom) {
+		Nom = nom;
+	}
+
+	public String getPrenom() {
+		return Prenom;
+	}
+
+	public void setPrenom(String prenom) {
+		Prenom = prenom;
+	}
+
+	public Integer getAge() {
+		return Age;
+	}
+
+	public void setAge(Integer age) {
+		Age = age;
+	}
+
+	public Integer getNumeroClient() {
+		return NumeroClient;
+	}
+
+	public void setNumeroClient() {
+		NumeroClient = compteur;
+	}
+	
+	public Integer nombreDeCompte() {
+		return this.comptes.size();
+	}
+	
+	public void afficherNbComptes() {
+		System.out.println(getNom() + " " + getPrenom() + " possède " + nombreDeCompte() + " compte(s).");
+	}
+	
+	public void ajouterUnCompte(Compte compte) {
+		if (nombreDeCompte() <= 4) {
+			this.comptes.add(compte);
+			System.out.println("Le compte " + compte.getNumero() + " a été ajouté avec succés.");
+		} else {
+			System.out.println("Impossible d'ajouter un compte car la limite est atteinte.");
+		}
+	}
+	
+	public void consulterTousMesComptes() {
+		for (Compte compte : comptes) {
+			System.out.println("Le solde du compte N° " + compte.getNumero() + " est de " + compte.getMontant() + " €.");
+		}
+	}
+	
+	public void transfertCompteAVersComteB(Compte compteA, Compte compteB) {
+		double montant = compteA.getMontant();
+		compteA.retirer(montant);
+		compteB.ajouter(montant);
+	}
+}
