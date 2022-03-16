@@ -75,9 +75,14 @@ public class Client {
 		}
 	}
 	
-	public void transfertCompteAVersComteB(Compte compteA, Compte compteB) {
-		double montant = compteA.getMontant();
-		compteA.retirer(montant);
-		compteB.ajouter(montant);
+	public void transfertCompteAVersComteB(Compte compteADebiter, Compte compteACrediter) {
+		double montant = compteADebiter.getMontant();
+		compteADebiter.retirer(montant);
+		compteACrediter.ajouter(montant);
+	}
+	
+	public void transfertEtSupprimeCompte(Compte compteAReception, Compte compteASupprimer) {
+		transfertCompteAVersComteB(compteASupprimer, compteAReception);
+		this.comptes.remove(compteASupprimer);
 	}
 }

@@ -9,13 +9,15 @@ public class Main {
 		System.out.println("Bonjour");
 		Compte com_ev1 = new Compte(3000.02);
 		Compte com_ev2 = new Compte(10.49);
+		Compte com_ev3 = new Compte(2.89);
 		Client cli_ev = new Client("Vankerkore", "Emmanuel", 28);
 		cli_ev.ajouterUnCompte(com_ev1);
 		cli_ev.ajouterUnCompte(com_ev2);
-		System.out.println("Avant le transfert");
+		cli_ev.ajouterUnCompte(com_ev3);
+		System.out.println("Avant la suppression");
 		cli_ev.consulterTousMesComptes();
-		cli_ev.transfertCompteAVersComteB(com_ev1, com_ev2);
-		System.out.println("Après le transfert");
+		cli_ev.transfertEtSupprimeCompte(com_ev1, com_ev3);
+		System.out.println("Après la suppression");
 		cli_ev.consulterTousMesComptes();
 	}
 }
