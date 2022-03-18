@@ -81,6 +81,13 @@ public class Client {
 		compteACrediter.ajouter(montant);
 	}
 	
+	public void transfertCompteAVersCompteBPartiel(Compte compteADebiter, Compte compteACrediter, Double montant) {
+		if (montant <= compteADebiter.getMontant()) {
+			compteADebiter.retirer(montant);
+			compteACrediter.ajouter(montant);
+		}
+	}
+	
 	public void transfertEtSupprimeCompte(Compte compteAReception, Compte compteASupprimer) {
 		transfertCompteAVersComteB(compteASupprimer, compteAReception);
 		this.comptes.remove(compteASupprimer);
