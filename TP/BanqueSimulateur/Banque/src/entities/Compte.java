@@ -6,6 +6,11 @@ public class Compte {
 	Integer Numero;
 	Double Montant;
 	
+	public Compte() {
+		this.setNumero();
+		this.setMontant(0.00);
+	}
+	
 	public Compte(Double MontantInitial) {
 		this.setNumero();
 		this.setMontant(MontantInitial);

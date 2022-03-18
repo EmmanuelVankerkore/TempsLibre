@@ -2,6 +2,7 @@ package test;
 
 import entities.Client;
 import entities.Compte;
+import entities.CompteRemunere;
 
 public class Test {
 
@@ -102,5 +103,10 @@ public class Test {
 		cli_ev.ajouterUnCompte(com_ev4);
 		cli_ev.ajouterUnCompte(com_ev5);
 		cli_ev.afficherInformationCompte(1002);
+	}
+	
+	public void creationCompteRemunererAvecAffichageDesInformations() {
+		CompteRemunere com_ev = new CompteRemunere();
+		com_ev.afficher();
 	}
 }
