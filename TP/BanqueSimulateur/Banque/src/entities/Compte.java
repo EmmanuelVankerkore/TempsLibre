@@ -9,6 +9,7 @@ public class Compte {
 	public Compte() {
 		this.setNumero();
 		this.setMontant(0.00);
+		compteur++;
 	}
 	
 	public Compte(Double MontantInitial) {

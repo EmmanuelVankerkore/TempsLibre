@@ -56,6 +56,9 @@ public class Client {
 		return this.comptes.size();
 	}
 	
+	/**
+	 * Afficher un message indiquant le nombre de comptes en possession du client
+	 */
 	public void afficherNbComptes() {
 		System.out.println(getNom() + " " + getPrenom() + " possède " + nombreDeCompte() + " compte(s).");
 	}
