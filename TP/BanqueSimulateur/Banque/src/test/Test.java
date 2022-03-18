@@ -2,6 +2,7 @@ package test;
 
 import entities.Client;
 import entities.Compte;
+import entities.CompteASeuil;
 import entities.CompteRemunere;
 
 public class Test {
@@ -116,6 +117,11 @@ public class Test {
 		System.out.println("Avant ajout des intérêts");
 		com_ev.verserInteret();
 		System.out.println("Après ajout des intérêts");
+		com_ev.afficher();
+	}
+	
+	public void creationCompteASeuilAvecAffichageDesInformations() {
+		CompteASeuil com_ev = new CompteASeuil(110.00);
 		com_ev.afficher();
 	}
 }
