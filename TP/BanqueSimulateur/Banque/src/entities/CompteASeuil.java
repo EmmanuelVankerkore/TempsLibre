@@ -27,4 +27,10 @@ public class CompteASeuil extends Compte{
 		System.out.print("Le numero de compte " + getNumero() + " est au solde de " + getMontant());
 		System.out.println(" € avec un seuil à " + getSeuil() + " €");
 	}
+	
+	public void retirerAvecRespectDuSeuil(Double montant) {
+		if (getMontant() - montant >= getSeuil()) {
+			retirer(montant);
+		}
+	}
 }
