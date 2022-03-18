@@ -60,6 +60,15 @@ public class Client {
 		System.out.println(getNom() + " " + getPrenom() + " possède " + nombreDeCompte() + " compte(s).");
 	}
 	
+	public void afficherInformationCompte(Integer numeroCompte) {
+		for (Compte compte : comptes) {
+			if (numeroCompte.equals(compte.getNumero())) {
+				System.out.println("Le numéro de compte " + compte.getNumero() + " est au solde de " + compte.getMontant());
+				break;
+			}
+		}
+	}
+	
 	public void ajouterUnCompte(Compte compte) {
 		if (nombreDeCompte() <= 4) {
 			this.comptes.add(compte);
