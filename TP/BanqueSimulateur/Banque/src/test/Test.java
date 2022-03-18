@@ -139,4 +139,15 @@ public class Test {
 		System.out.println("Après le second retrait");
 		com_ev.afficher();
 	}
+	
+	public void ajouter3TypesComptesAUnClient() {
+		Compte com_lc = new Compte(1800.00);
+		CompteASeuil comS_lc = new CompteASeuil(110.00);
+		CompteRemunere comR_lc = new CompteRemunere(100.00);
+		Client lc = new Client("Cohen", "Lola", 22);
+		lc.ajouterUnCompte(com_lc);
+		lc.ajouterUnCompte(comR_lc);
+		lc.ajouterUnCompte(comS_lc);
+		lc.consulterTousMesComptes();
+	}
 }
