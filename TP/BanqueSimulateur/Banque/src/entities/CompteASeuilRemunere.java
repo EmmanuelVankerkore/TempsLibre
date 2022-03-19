@@ -11,7 +11,7 @@ public class CompteASeuilRemunere extends CompteRemunere implements ICompteASeui
 		setSeuil(100.00);
 	}
 	
-	public double getSeuil() {
+	public Double getSeuil() {
 		return seuil;
 	}
 
@@ -19,7 +19,7 @@ public class CompteASeuilRemunere extends CompteRemunere implements ICompteASeui
 		this.seuil = seuil;
 	}
 	
-	public void retirerAvecRespectDuSeuil(Double montant) {
+	public void retirer(Double montant) {
 		if (getMontant() - montant >= getSeuil()) {
 			retirer(montant);
 		}

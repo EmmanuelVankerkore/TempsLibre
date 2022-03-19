@@ -5,27 +5,29 @@ import entities.Compte;
 import entities.CompteASeuil;
 import entities.CompteASeuilRemunere;
 import entities.CompteRemunere;
+import exceptions.RetirerDepasserSeuil;
 
 public class Main {
 
 	public static void main(String[] args) {
 		System.out.println("Bonjour");
-		Compte com_lc = new Compte(1800.00);
 		CompteASeuil comS_lc = new CompteASeuil(110.00);
-		CompteRemunere comR_lc = new CompteRemunere(100.00);
-		CompteRemunere comR2_lc = new CompteRemunere(200.00);
 		CompteASeuilRemunere comSR_lc = new CompteASeuilRemunere();
-		Client lc = new Client("Cohen", "Lola", 22);
-		lc.ajouterUnCompte(comR_lc);
-		lc.ajouterUnCompte(com_lc);
-		lc.ajouterUnCompte(comR2_lc);
-		lc.ajouterUnCompte(comS_lc);
-		lc.ajouterUnCompte(comSR_lc);
-		
-		System.out.println("Avant l'application des intérêts dans les comptes rems");
-		lc.consulterTousMesComptes();
-		lc.verserInteretSurMesCompteRemunere();
-		System.out.println("Apres l'application des intérêts dans les comptes rems");
-		lc.consulterTousMesComptes();
+		System.out.println("Avant la transaction");
+		comS_lc.afficher();
+		comSR_lc.afficher();
+		try {
+			comS_lc.retirer(105.50);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			comSR_lc.retirer(975.50);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		System.out.println("Après la transaction");
+		comS_lc.afficher();
+		comSR_lc.afficher();
 	}
 }
