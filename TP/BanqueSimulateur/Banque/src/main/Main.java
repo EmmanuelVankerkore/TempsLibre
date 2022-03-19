@@ -17,7 +17,7 @@ public class Main {
 		comS_lc.afficher();
 		comSR_lc.afficher();
 		try {
-			comS_lc.retirer(105.50);
+			((CompteASeuil)comS_lc).retirer(105.50);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -32,12 +32,12 @@ public class CompteASeuil extends Compte implements ICompteASeuil {
 	}
 	
 	public void retirer(Double montant) throws RetirerDepasserSeuil{
-		
 		if (getMontant() - montant >= getSeuil()) {
+			/*
 			System.out.println("solde actuel : " + getMontant());
 			System.out.println("montant : " + montant);
 			System.out.println("Soustraction des deux : " + (getMontant() - montant));
-			System.out.println("Seuil : " + getSeuil());
+			System.out.println("Seuil : " + getSeuil());*/
 			retirer(montant);
 		} else {
 			throw new RetirerDepasserSeuil();
