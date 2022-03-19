@@ -74,8 +74,11 @@ public class Client {
 	
 	public void ajouterUnCompte(Compte compte) {
 		if (nombreDeCompte() <= 4) {
-			this.comptes.add(compte);
-			System.out.println("Le compte " + compte.getNumero() + " a été ajouté avec succés.");
+			//if (compte.getClass().getName() == "entities.CompteRemunere") {
+				//compte.vers;
+				this.comptes.add(compte);
+				System.out.println("Le compte " + compte.getNumero() + " a été ajouté avec succés.");
+			//}
 		} else {
 			System.out.println("Impossible d'ajouter un compte car la limite est atteinte.");
 		}
@@ -103,5 +106,14 @@ public class Client {
 	public void transfertEtSupprimeCompte(Compte compteAReception, Compte compteASupprimer) {
 		transfertCompteAVersComteB(compteASupprimer, compteAReception);
 		this.comptes.remove(compteASupprimer);
+	}
+	
+	public void verserInteretSurMesCompteRemunere() {
+		for (Compte compte : comptes) {
+			if (compte.getClass().getName() == "entities.CompteRemunere") {
+				((CompteRemunere) compte).verserInteret();
+			}
+		}
+			
 	}
 }
