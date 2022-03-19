@@ -1,6 +1,8 @@
 package entities;
 
-public class CompteRemunere extends Compte{
+import interfaces.ICompteRemunere;
+
+public class CompteRemunere extends Compte implements ICompteRemunere{
 	
 	Double taux;
 	
