@@ -112,6 +112,8 @@ public class Client {
 		for (Compte compte : comptes) {
 			if (compte.getClass().getName() == "entities.CompteRemunere") {
 				((CompteRemunere) compte).verserInteret();
+			} else if (compte.getClass().getName() == "entities.CompteASeuilRemunere") {
+				((CompteASeuilRemunere) compte).verserInteret();
 			}
 		}
 			
