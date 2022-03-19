@@ -1,25 +1,27 @@
 package entities;
 
-public class CompteASeuil extends Compte{
+import interfaces.ICompteASeuil;
+
+public class CompteASeuil extends Compte implements ICompteASeuil {
 	
-	double seuil;
+	Double seuil;
 	
 	public CompteASeuil() {
 		super();
-		setSeuil(50);
+		setSeuil(0.015);
 		
 	}
 	
 	public CompteASeuil(Double montant) {
 		super(montant);
-		setSeuil(50);
+		setSeuil(0.015);
 	}
 
 	public double getSeuil() {
 		return seuil;
 	}
 
-	public void setSeuil(double seuil) {
+	public void setSeuil(Double seuil) {
 		this.seuil = seuil;
 	}
 
