@@ -3,6 +3,7 @@ package test;
 import entities.Client;
 import entities.Compte;
 import entities.CompteASeuil;
+import entities.CompteASeuilRemunere;
 import entities.CompteRemunere;
 
 public class Test {
@@ -166,5 +167,10 @@ public class Test {
 		lc.verserInteretSurMesCompteRemunere();
 		System.out.println("Apres l'application des intérêts dans les comptes rems");
 		lc.consulterTousMesComptes();
+	}
+	
+	public void creationCompteRemEtSeuil() {
+		CompteASeuilRemunere ev = new CompteASeuilRemunere();
+		ev.afficher();
 	}
 }
