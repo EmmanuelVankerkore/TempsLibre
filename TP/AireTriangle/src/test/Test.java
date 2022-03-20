@@ -2,6 +2,7 @@ package test;
 
 import entities.DroiteAffine;
 import entities.Point2D;
+import entities.Segment;
 import entities.Triangle;
 
 public class Test {
@@ -26,5 +27,13 @@ public class Test {
 		DroiteAffine da2 = new DroiteAffine("D2", 3.25, -4.201);
 		da1.afficher();
 		da2.afficher();
+	}
+	
+	public void afficherSegmentetTaille() {
+		Point2D pointA = new Point2D("A", 0.0, 0.0);
+		Point2D pointB = new Point2D("B", 4.0, 3.0);
+		Segment s1 = new Segment("s1", pointA, pointB);
+		s1.afficher();
+		System.out.println("La taille du segment " + s1.getName() + " est de " + s1.getTaille());
 	}
 }

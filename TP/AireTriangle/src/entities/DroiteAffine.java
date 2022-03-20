@@ -48,6 +48,14 @@ public class DroiteAffine {
 	}
 
 	public void afficher() {
-		System.out.println("(" + getName() + ") : y = " + getCoef() + " x + " + getConstante());
+		if (getConstante() >= 0.0) {
+			System.out.println("(" + getName() + ") : y = " + getCoef() + " x + " + getConstante());
+		} else {
+			System.out.println("(" + getName() + ") : y = " + getCoef() + " x - " + (-getConstante()));
+		}	
+	}
+	
+	public DroiteAffine getDroiteAffinePerpendiculaireFromPoint(Point2D point) {
+		return new DroiteAffine(getName().concat("_2"), -1/getCoef(), point.getY() + (1/getCoef())*point.getX());
 	}
 }
