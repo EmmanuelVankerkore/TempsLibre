@@ -36,4 +36,19 @@ public class Test {
 		s1.afficher();
 		System.out.println("La taille du segment " + s1.getName() + " est de " + s1.getTaille());
 	}
+	
+	public void CreationDroitePerpendiculaire() {
+		Point2D pointB = new Point2D("B", 4.0, 3.0);
+		DroiteAffine da = new DroiteAffine("d1", 2.0, 3.0);
+		DroiteAffine da2 = da.getDroiteAffinePerpendiculaireFromPoint(pointB);
+		da.afficher();
+		da2.afficher();
+	}
+	
+	public void afficherLeNomIntersectionDe2DroitesAffines() {
+		Point2D pointB = new Point2D("B", 4.0, 3.0);
+		DroiteAffine da = new DroiteAffine("d1", 2.0, 3.0);
+		DroiteAffine da2 = da.getDroiteAffinePerpendiculaireFromPoint(pointB);
+		System.out.println("Le nom de l'intersection est  : " + da.getNameIntersection(da2)); 
+	}
 }

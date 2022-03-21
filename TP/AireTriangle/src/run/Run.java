@@ -10,8 +10,7 @@ public class Run {
 		Point2D pointB = new Point2D("B", 4.0, 3.0);
 		DroiteAffine da = new DroiteAffine("d1", 2.0, 3.0);
 		DroiteAffine da2 = da.getDroiteAffinePerpendiculaireFromPoint(pointB);
-		da.afficher();
-		da2.afficher();
+		System.out.println("Le nom de l'intersection est  : " + da.getNameIntersection(da2)); 
 	}
 
 }

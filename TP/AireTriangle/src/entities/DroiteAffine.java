@@ -60,7 +60,7 @@ public class DroiteAffine {
 	}
 	
 	public String getNameIntersection(DroiteAffine d) {
-		return "Intersection_".concat(getName()).concat("_").concat(d.getName());
+		return "Intersection-".concat(getName()).concat("-").concat(d.getName());
 	}
 	
 	public Point2D getPointIntersection(DroiteAffine droite) {
