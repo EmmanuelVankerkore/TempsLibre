@@ -63,7 +63,15 @@ public class DroiteAffine {
 		return "Intersection-".concat(getName()).concat("-").concat(d.getName());
 	}
 	
-	public Point2D getPointIntersection(DroiteAffine droite) {
-		return new Point2D(" ", 0.0, 0.0);
+	public Double getDimXOfIntersectionAvec(DroiteAffine d) {
+		return (getConstante() - d.getConstante())/(d.getCoef() - getCoef());
+	}
+	
+	public Double getDimYOfIntersectionAvec(DroiteAffine d) {
+		return (d.getCoef()*getConstante() - getCoef()*d.getConstante()) / (d.getCoef() - getCoef());
+	}
+	
+	public Point2D getPointIntersection(DroiteAffine d) {
+		return new Point2D(getNameIntersection(d), getDimXOfIntersectionAvec(d), getDimYOfIntersectionAvec(d));
 	}
 }
