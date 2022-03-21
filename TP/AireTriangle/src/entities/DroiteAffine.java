@@ -58,4 +58,12 @@ public class DroiteAffine {
 	public DroiteAffine getDroiteAffinePerpendiculaireFromPoint(Point2D point) {
 		return new DroiteAffine(getName().concat("_2"), -1/getCoef(), point.getY() + (1/getCoef())*point.getX());
 	}
+	
+	public String getNameIntersection(DroiteAffine d) {
+		return "Intersection_".concat(getName()).concat("_").concat(d.getName());
+	}
+	
+	public Point2D getPointIntersection(DroiteAffine droite) {
+		return new Point2D(" ", 0.0, 0.0);
+	}
 }
