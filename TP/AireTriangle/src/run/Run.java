@@ -12,6 +12,8 @@ public class Run {
 		DroiteAffine da2 = da.getDroiteAffinePerpendiculaireFromPoint(pointB);
 		Point2D intersection = da.getPointIntersection(da2);
 		intersection.afficher();
+		Point2D intersection2 = da2.getPointIntersection(da);
+		intersection2.afficher();
 	}
 
 }

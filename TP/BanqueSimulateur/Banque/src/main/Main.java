@@ -17,14 +17,11 @@ public class Main {
 		comS_lc.afficher();
 		comSR_lc.afficher();
 		try {
-			((CompteASeuil)comS_lc).retirer(105.50);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		try {
+			comS_lc.retirer2(105.50);
 			comSR_lc.retirer(975.50);
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
+//			e.printStackTrace();
 		}
 		System.out.println("Après la transaction");
 		comS_lc.afficher();

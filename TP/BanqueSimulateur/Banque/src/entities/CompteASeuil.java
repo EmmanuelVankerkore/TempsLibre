@@ -31,7 +31,7 @@ public class CompteASeuil extends Compte implements ICompteASeuil {
 		System.out.println(" € avec un seuil à " + getSeuil() + " €");
 	}
 	
-	public void retirer(Double montant) throws RetirerDepasserSeuil{
+	public void retirer2(Double montant) throws RetirerDepasserSeuil{
 		if (getMontant() - montant >= getSeuil()) {
 			/*
 			System.out.println("solde actuel : " + getMontant());

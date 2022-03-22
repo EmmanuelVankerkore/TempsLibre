@@ -19,7 +19,7 @@ public class CompteASeuilRemunere extends CompteRemunere implements ICompteASeui
 		this.seuil = seuil;
 	}
 	
-	public void retirer(Double montant) {
+	public void retirer2(Double montant) {
 		if (getMontant() - montant >= getSeuil()) {
 			retirer(montant);
 		}
