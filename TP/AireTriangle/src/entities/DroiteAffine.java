@@ -14,10 +14,10 @@ public class DroiteAffine {
 	
 	public DroiteAffine(String nom, Point2D a, Point2D b) {
 		setName(nom);
-		if (a.getX() <= b.getX()) {
+		if (a.getX() < b.getX()) {
 			setCoef((b.getY()-a.getY())/(b.getX()-a.getX()));
 			setConstante(a.getY()-(a.getX()*(b.getY()-a.getY())/(b.getX()-a.getX())));
-		} else {
+		} else if (a.getX() > b.getX()){
 			setCoef((a.getY()-b.getY())/(a.getX()-b.getX()));
 			setConstante(a.getY()-(a.getX()*(a.getY()-b.getY())/(a.getX()-b.getX())));
 		}

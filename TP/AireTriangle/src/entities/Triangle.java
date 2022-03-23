@@ -9,7 +9,7 @@ public class Triangle {
 	Point2D a;
 	Point2D b;
 	Point2D c;
-	List<Segment> listeSegmentIneligible;
+	List<Segment> listeSegmenteligible;
 	
 	public Triangle(String name, Point2D p1, Point2D p2, Point2D p3) {
 		setNom(name);
@@ -50,12 +50,12 @@ public class Triangle {
 		this.c = c;
 	}
 	/*
-	public List<Segment> getListeSegmentIneligible(){
-		return listeSegmentIneligible;
+	public List<Segment> getListeSegmentEligible(){
+		return listeSegmentEligible;
 	}
 	
-	public void setListeSegmentIneligible() {
-		this.listeSegmentIneligible.
+	public void setListeSegmentEligible() {
+		this.listeSegmentEligible.
 	}*/
 	
 	
@@ -77,4 +77,14 @@ public class Triangle {
 		listeDeTousLesSegments.add(new Segment("S3", c, a));
 		return listeDeTousLesSegments;
 	}
+	
+	public static Boolean estSegmentEligible(Segment segment) {
+		if (segment.getPoint1().getX() - segment.getPoint2().getX() != 0.0 &&
+				segment.getPoint1().getY() - segment.getPoint2().getY() != 0.0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 }
