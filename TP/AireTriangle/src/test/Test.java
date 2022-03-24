@@ -1,5 +1,6 @@
 package test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import entities.DroiteAffine;
@@ -103,5 +104,21 @@ public class Test {
 		t1.afficher();
 		t1.setListeSegmentEligible();
 		t1.afficher();
+	}
+	
+	public void identifierSiUnPointAppartientAUneListeDePoints() {
+		List<Point2D> lpS = new ArrayList<Point2D>();
+		List<Point2D> lpT = new ArrayList<Point2D>();
+		Point2D p1 = new Point2D("A", 0.0, 0.0);
+		Point2D p2 = new Point2D("B", 0.0, 4.0);
+		Point2D p3 = new Point2D("C", 5.0, 0.0);
+		lpS.add(p1);
+		lpS.add(p3);
+		lpT.add(p1);
+		lpT.add(p2);
+		lpT.add(p3);
+		System.out.println(lpS.contains(p1));
+		System.out.println(lpS.contains(p2));
+		System.out.println(lpS.contains(p3));
 	}
 }
