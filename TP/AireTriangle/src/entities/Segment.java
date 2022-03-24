@@ -1,5 +1,8 @@
 package entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Segment {
 	
 	String name;
@@ -56,5 +59,11 @@ public class Segment {
 		return Math.sqrt(auCarre(deltaEnX())+auCarre(deltaEnY()));
 	}
 	
+	public List<Point2D> getTousLesPoints(){
+		List<Point2D> lp = new ArrayList<Point2D>();
+		lp.add(getPoint1());
+		lp.add(getPoint2());
+		return lp;
+	}
 	
 }

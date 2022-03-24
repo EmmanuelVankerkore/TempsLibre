@@ -86,6 +86,23 @@ public class Triangle {
 		return listeDeTousLesSegments;
 	}
 	
+	public List<Point2D> getTousLesPoints(){
+		List<Point2D> lp = new ArrayList<Point2D>();
+		lp.add(getA());
+		lp.add(getB());
+		lp.add(getC());
+		return lp;
+	}
+	
+	public Point2D getPointNonAppartenantSegment(Segment seg) {
+		for (Point2D p : getTousLesPoints()) {
+			if (seg.getTousLesPoints().contains(p) == false) {
+				return p;
+			}
+		}
+		return null;
+	}
+	
 	public static Boolean estSegmentEligible(Segment segment) {
 		if (segment.getPoint1().getX() - segment.getPoint2().getX() != 0.0 &&
 				segment.getPoint1().getY() - segment.getPoint2().getY() != 0.0) {
