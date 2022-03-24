@@ -1,6 +1,7 @@
 package entities;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Triangle {
@@ -9,7 +10,7 @@ public class Triangle {
 	Point2D a;
 	Point2D b;
 	Point2D c;
-	List<Segment> listeSegmenteligible;
+	List<Segment> listeSegmentEligible;
 	
 	public Triangle(String name, Point2D p1, Point2D p2, Point2D p3) {
 		setNom(name);
@@ -49,14 +50,14 @@ public class Triangle {
 	public void setC(Point2D c) {
 		this.c = c;
 	}
-	/*
+	
 	public List<Segment> getListeSegmentEligible(){
 		return listeSegmentEligible;
 	}
 	
 	public void setListeSegmentEligible() {
-		this.listeSegmentEligible.
-	}*/
+		this.listeSegmentEligible = getListeSegmentsEligibles(getTousLesSegments());
+	}
 	
 	
 	
@@ -68,6 +69,12 @@ public class Triangle {
 		getB().afficher();
 		System.out.print("   ");
 		getC().afficher();
+		if (getListeSegmentEligible() != null) {
+			System.out.println("Les segments éligible du triangle sont les suivant:");
+			for (Segment segment : getListeSegmentEligible()) {
+				segment.afficher();
+			}
+		}
 	}
 
 	public List<Segment> getTousLesSegments(){
