@@ -87,4 +87,14 @@ public class Triangle {
 		}
 	}
 	
+	public static List<Segment> getListeSegmentsEligibles(List<Segment> listSeg){
+		List<Segment> ls = new ArrayList<Segment>();
+		for (Segment segment : listSeg) {
+			if (estSegmentEligible(segment)) {
+				ls.add(segment);
+			}
+		}
+		return ls;
+	}
+	
 }
