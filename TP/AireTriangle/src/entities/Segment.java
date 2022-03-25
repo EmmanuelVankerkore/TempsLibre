@@ -59,6 +59,16 @@ public class Segment {
 		return Math.sqrt(auCarre(deltaEnX())+auCarre(deltaEnY()));
 	}
 	
+	public String getDispositionPointFromSegment(Point2D point) {
+		if (point.getX() <= getPoint1().getX() && point.getX() <= getPoint2().getX()) {
+			return "gauche";
+		} else if (point.getX() >= getPoint1().getX() && point.getX() >= getPoint2().getX()) {
+			return "droite";
+		} else {
+			return "centre";
+		}
+	}
+	
 	public List<Point2D> getTousLesPoints(){
 		List<Point2D> lp = new ArrayList<Point2D>();
 		lp.add(getPoint1());
