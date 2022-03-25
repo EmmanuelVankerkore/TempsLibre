@@ -139,6 +139,15 @@ public class Test {
 		System.out.println(s.getDispositionPointFromSegment(pointC));
 	}
 	
+	public void identifierSiUnPointCorrespondALUnDesPointsDuTriangle() {
+		Point2D pointA = new Point2D("A", 0.0, 4.0);
+		Point2D pointB = new Point2D("B", 3.0, 0.0);
+		Point2D pointC = new Point2D("C", 0.0, 0.0);
+		Point2D pointD = new Point2D("D", 3.0, 5.0);
+		Triangle t1 = new Triangle("T1", pointA, pointB, pointC);
+		System.out.println(t1.estUnPointDuTriangle(pointD));
+	}
+	
 	public void test_final() {
 		Point2D pointA = new Point2D("A", 0.0, 4.0);
 		Point2D pointB = new Point2D("B", 3.0, 0.0);
