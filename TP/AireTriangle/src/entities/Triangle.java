@@ -121,6 +121,21 @@ public class Triangle {
 		return null;
 	}
 	
+	public Double calculTriangleRectangle(Segment segmentEligible, Point2D intersection) {
+		Segment segmentEligiblePerpendiculaire = new Segment("SegPer", 
+															getPointNonAppartenantSegment(segmentEligible), 
+															PointDuTriangle(intersection));
+		return segmentEligiblePerpendiculaire.getTaille() * segmentEligible.getTaille() / 2;
+	}
+	
+	public Double getAire(Segment segmentEligible, Point2D intersection) {
+		if (estUnPointDuTriangle(intersection) == true) { // triangle rectangle
+			return calculTriangleRectangle(segmentEligible, intersection); 
+		} else {
+			return 0.0;	
+		}
+	}
+	
 	public static Boolean estSegmentEligible(Segment segment) {
 		if (segment.getPoint1().getX() - segment.getPoint2().getX() != 0.0 &&
 				segment.getPoint1().getY() - segment.getPoint2().getY() != 0.0) {
