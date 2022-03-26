@@ -1,7 +1,9 @@
 package entities;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Triangle {
 	
@@ -135,6 +137,7 @@ public class Triangle {
 	}
 	
 	public Double calculAireTriangleNonRectangle(Segment segmentEligible, Point2D intersection) {
+		List<Segment> listeSeg = getListSegmentForCalcul(segmentEligible, intersection);
 		if (segmentEligible.getDispositionPointFromSegment(intersection) == "centre") {
 			
 		}
@@ -168,14 +171,12 @@ public class Triangle {
 		return ls;
 	}
 	
-	public static Triangle testdefTriangles() {
-		Point2D pointA = new Point2D("A", 0.0, 0.0);
-		Point2D pointB = new Point2D("B", 3.0, 4.0);
-		Point2D pointC = new Point2D("C", 3.0, 0.0);
-		//Point2D pointD = new Point2D("I", 1.0, 2.0);
-		Triangle t1 = new Triangle("T1", pointA, pointB, pointC);
-		return t1;
-		//Triangle t2 = new Triangle("T1", pointA, pointB, pointD);
+	public static Map<String, Double> getMapSegmentDistancePourCalcul(List<Segment> listeSegments){
+		Map<String, Double> mapSegDis = new HashMap<String, Double>();
+		for (Segment segment : listeSegments) {
+			mapSegDis.put(segment.getName(), segment.getTaille());
+		}
+		return mapSegDis;
 	}
 	
 }
