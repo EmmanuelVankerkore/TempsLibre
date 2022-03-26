@@ -112,6 +112,15 @@ public class Triangle {
 		return false;
 	}
 	
+	public Point2D PointDuTriangle(Point2D point) {
+		for (Point2D p : getTousLesPoints()) {
+			if (p.getX().equals(point.getX()) && p.getY().equals(point.getY())) {
+				return p;
+			}
+		}
+		return null;
+	}
+	
 	public static Boolean estSegmentEligible(Segment segment) {
 		if (segment.getPoint1().getX() - segment.getPoint2().getX() != 0.0 &&
 				segment.getPoint1().getY() - segment.getPoint2().getY() != 0.0) {
