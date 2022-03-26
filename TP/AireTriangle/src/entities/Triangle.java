@@ -1,8 +1,6 @@
 package entities;
 
-import java.awt.Point;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class Triangle {
@@ -120,17 +118,29 @@ public class Triangle {
 		}
 		return null;
 	}
-	
-	public Double calculTriangleRectangle(Segment segmentEligible, Point2D intersection) {
+	/*
+	public List<Segment> getListSegmentForCalcul(Segment segmentEligible, Point2D intersection){
+		List<Segment> listeSeg = new ArrayList<Segment>(3);
+		listeSeg.add(new Segment("GaucheIntersection", intersection, intersection))
+	}
+	*/
+	public Double calculAireTriangleRectangle(Segment segmentEligible, Point2D intersection) {
 		Segment segmentEligiblePerpendiculaire = new Segment("SegPer", 
 															getPointNonAppartenantSegment(segmentEligible), 
 															PointDuTriangle(intersection));
 		return segmentEligiblePerpendiculaire.getTaille() * segmentEligible.getTaille() / 2;
 	}
 	
+	public Double calculAireTriangleNonRectangle(Segment segmentEligible, Point2D intersection) {
+		if (segmentEligible.getDispositionPointFromSegment(intersection) == "centre") {
+			
+		}
+		return 0.0;
+	}
+	
 	public Double getAire(Segment segmentEligible, Point2D intersection) {
 		if (estUnPointDuTriangle(intersection) == true) { // triangle rectangle
-			return calculTriangleRectangle(segmentEligible, intersection); 
+			return calculAireTriangleRectangle(segmentEligible, intersection); 
 		} else {
 			return 0.0;	
 		}
@@ -153,6 +163,16 @@ public class Triangle {
 			}
 		}
 		return ls;
+	}
+	
+	public static Triangle testdefTriangles() {
+		Point2D pointA = new Point2D("A", 0.0, 0.0);
+		Point2D pointB = new Point2D("B", 3.0, 4.0);
+		Point2D pointC = new Point2D("C", 3.0, 0.0);
+		//Point2D pointD = new Point2D("I", 1.0, 2.0);
+		Triangle t1 = new Triangle("T1", pointA, pointB, pointC);
+		return t1;
+		//Triangle t2 = new Triangle("T1", pointA, pointB, pointD);
 	}
 	
 }

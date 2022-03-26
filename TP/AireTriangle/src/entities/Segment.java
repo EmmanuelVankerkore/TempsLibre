@@ -69,6 +69,22 @@ public class Segment {
 		}
 	}
 	
+	public Point2D getPointGauche() {
+		if (getPoint1().getX() < getPoint2().getX()) {
+			return getPoint1();
+		} else {
+			return getPoint2();
+		}
+	}
+	
+	public Point2D getPointDroit() {
+		if (getPoint1().getX() > getPoint2().getX()) {
+			return getPoint1();
+		} else {
+			return getPoint2();
+		}
+	}
+	
 	public List<Point2D> getTousLesPoints(){
 		List<Point2D> lp = new ArrayList<Point2D>();
 		lp.add(getPoint1());
