@@ -118,12 +118,15 @@ public class Triangle {
 		}
 		return null;
 	}
-	/*
+	
 	public List<Segment> getListSegmentForCalcul(Segment segmentEligible, Point2D intersection){
 		List<Segment> listeSeg = new ArrayList<Segment>(3);
-		listeSeg.add(new Segment("GaucheIntersection", intersection, intersection))
+		listeSeg.add(new Segment("GaucheIntersection", segmentEligible.getPointGauche(), intersection));
+		listeSeg.add(new Segment("DroiteIntersection", segmentEligible.getPointDroit(), intersection));
+		listeSeg.add(new Segment("PointNonSegIntersection", getPointNonAppartenantSegment(segmentEligible), intersection));
+		return listeSeg;
 	}
-	*/
+	
 	public Double calculAireTriangleRectangle(Segment segmentEligible, Point2D intersection) {
 		Segment segmentEligiblePerpendiculaire = new Segment("SegPer", 
 															getPointNonAppartenantSegment(segmentEligible), 

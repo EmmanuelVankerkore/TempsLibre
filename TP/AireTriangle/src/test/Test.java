@@ -157,6 +157,29 @@ public class Test {
 		t1.PointDuTriangle(pointD).afficher();
 	}
 	
+	public void CreationListeContenantSegmentsPourCalcul() {
+		Point2D pointA = new Point2D("A", 4.0, 4.0);
+		Point2D pointB = new Point2D("B", 2.0, 12.0);
+		Segment s = new Segment("s1", pointA, pointB);
+		System.out.print("Point gauche : ");
+		s.getPointGauche().afficher();
+		System.out.print("Point droit : ");
+		s.getPointDroit().afficher();
+	}
+	
+	public void ListerSegmentsPourCalculerAire() {
+		Point2D pointA = new Point2D("A", 4.0, 4.0);
+		Point2D pointB = new Point2D("B", 2.0, 12.0);
+		Point2D pointC = new Point2D("C", 0.0, 0.0);
+		Point2D pointI = new Point2D("I", 2.0, 12.0);
+		Segment s = new Segment("s1", pointA, pointB);
+		Triangle t1 = new Triangle("T1", pointA, pointB, pointC);
+		List<Segment> ls = t1.getListSegmentForCalcul(s, pointI);
+		for (Segment segment : ls) {
+			segment.afficher();
+		}
+	}
+	
 	public void test_final() {
 		Point2D pointA = new Point2D("A", 0.0, 4.0);
 		Point2D pointB = new Point2D("B", 3.0, 0.0);

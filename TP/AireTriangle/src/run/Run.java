@@ -1,5 +1,7 @@
 package run;
 
+import java.util.List;
+
 import entities.DroiteAffine;
 import entities.Point2D;
 import entities.Segment;
