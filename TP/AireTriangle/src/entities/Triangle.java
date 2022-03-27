@@ -136,10 +136,13 @@ public class Triangle {
 		return segmentEligiblePerpendiculaire.getTaille() * segmentEligible.getTaille() / 2;
 	}
 	
-	public Double calculAireTriangleNonRectangle(Segment segmentEligible, Point2D intersection) {
-		List<Segment> listeSeg = getListSegmentForCalcul(segmentEligible, intersection);
+	public Double calculAireTriangleNonRectangle(Segment segmentEligible, Point2D intersection, Map<String, Double> mapSegDis) {
 		if (segmentEligible.getDispositionPointFromSegment(intersection) == "centre") {
-			
+			return calculAireTriangleNonRectangleVarianteCentre(mapSegDis.get("gauche"), mapSegDis.get("droite"), mapSegDis.get("centre"));
+		} else if (segmentEligible.getDispositionPointFromSegment(intersection) == "gauche") {
+			return calculAireTriangleNonRectangleVarianteGauche(mapSegDis.get("gauche"), mapSegDis.get("droite"), mapSegDis.get("centre"));
+		} else if(segmentEligible.getDispositionPointFromSegment(intersection) == "droite") {
+			return calculAireTriangleNonRectangleVarianteDroite(mapSegDis.get("gauche"), mapSegDis.get("droite"), mapSegDis.get("centre"));
 		}
 		return 0.0;
 	}
@@ -148,7 +151,9 @@ public class Triangle {
 		if (estUnPointDuTriangle(intersection) == true) { // triangle rectangle
 			return calculAireTriangleRectangle(segmentEligible, intersection); 
 		} else {
-			return 0.0;	
+			List<Segment> ls = getListSegmentForCalcul(segmentEligible, intersection);
+			Map<String, Double> md = getMapSegmentDistancePourCalcul(ls);
+			return calculAireTriangleNonRectangle(segmentEligible, intersection, md);	
 		}
 	}
 	
@@ -179,4 +184,29 @@ public class Triangle {
 		return mapSegDis;
 	}
 	
+	public static Double calculSousRectangle(Double tailleCoteIntersection, 
+											Double tailleNonSegIntersection) {
+		return (tailleCoteIntersection * tailleNonSegIntersection) / 2;
+	}
+
+	public static Double calculAireTriangleNonRectangleVarianteCentre(Double gaucheInter, 
+																	Double droiteInter, 
+																	Double nonSegInter) {
+		return calculSousRectangle(gaucheInter, nonSegInter) + calculSousRectangle(droiteInter, nonSegInter);
+	}
+	
+	public static Double calculAireTriangleNonRectangleVarianteGauche(Double gaucheInter, 
+																		Double droiteInter, 
+																		Double nonSegInter) {
+		return calculSousRectangle(droiteInter, nonSegInter) - calculSousRectangle(gaucheInter, nonSegInter);
+	}
+	public static Double calculAireTriangleNonRectangleVarianteDroite(Double gaucheInter, 
+																		Double droiteInter, 
+																		Double nonSegInter) {
+		return calculSousRectangle(gaucheInter, nonSegInter) - calculSousRectangle(droiteInter, nonSegInter);
+	}
+	
+	public static Double add_3(Double valeur) {
+		return valeur + 3;
+	}
 }
