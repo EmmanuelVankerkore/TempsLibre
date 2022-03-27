@@ -138,11 +138,17 @@ public class Triangle {
 	
 	public Double calculAireTriangleNonRectangle(Segment segmentEligible, Point2D intersection, Map<String, Double> mapSegDis) {
 		if (segmentEligible.getDispositionPointFromSegment(intersection) == "centre") {
-			return calculAireTriangleNonRectangleVarianteCentre(mapSegDis.get("gauche"), mapSegDis.get("droite"), mapSegDis.get("centre"));
+			return calculAireTriangleNonRectangleVarianteCentre(mapSegDis.get("GaucheIntersection"), 
+																mapSegDis.get("DroiteIntersection"), 
+																mapSegDis.get("PointNonSegIntersection"));
 		} else if (segmentEligible.getDispositionPointFromSegment(intersection) == "gauche") {
-			return calculAireTriangleNonRectangleVarianteGauche(mapSegDis.get("gauche"), mapSegDis.get("droite"), mapSegDis.get("centre"));
+			return calculAireTriangleNonRectangleVarianteGauche(mapSegDis.get("GaucheIntersection"), 
+																mapSegDis.get("DroiteIntersection"), 
+																mapSegDis.get("PointNonSegIntersection"));
 		} else if(segmentEligible.getDispositionPointFromSegment(intersection) == "droite") {
-			return calculAireTriangleNonRectangleVarianteDroite(mapSegDis.get("gauche"), mapSegDis.get("droite"), mapSegDis.get("centre"));
+			return calculAireTriangleNonRectangleVarianteDroite(mapSegDis.get("GaucheIntersection"), 
+																mapSegDis.get("DroiteIntersection"), 
+																mapSegDis.get("PointNonSegIntersection"));
 		}
 		return 0.0;
 	}
@@ -200,13 +206,10 @@ public class Triangle {
 																		Double nonSegInter) {
 		return calculSousRectangle(droiteInter, nonSegInter) - calculSousRectangle(gaucheInter, nonSegInter);
 	}
+	
 	public static Double calculAireTriangleNonRectangleVarianteDroite(Double gaucheInter, 
 																		Double droiteInter, 
 																		Double nonSegInter) {
 		return calculSousRectangle(gaucheInter, nonSegInter) - calculSousRectangle(droiteInter, nonSegInter);
-	}
-	
-	public static Double add_3(Double valeur) {
-		return valeur + 3;
 	}
 }
