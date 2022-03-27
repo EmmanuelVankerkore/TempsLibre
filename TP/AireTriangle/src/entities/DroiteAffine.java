@@ -4,9 +4,9 @@ package entities;
  * @author Emmanuel Vankerkore
  * @date 27/03/2022
  * 
- * La classe DroitAffine a pour but de définir une droite affine pour pour rappel, se définit de la façon suivante:
+ * La classe DroitAffine a pour but de définir une droite affine pour rappel, se définit de la façon suivante:
  * y = ax + b
- * tel que a et b appartiennent à l'ensemble de réel.
+ * tel que a et b appartiennent à l'ensemble des réels.
  * 
  * Pour des raisons de simplicités nous définirons a et b
  * comme des entiers relatifs.

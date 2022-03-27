@@ -152,7 +152,7 @@ public class Segment {
 	/**
 	 * La méthode renvoie une liste contenant les deux points du segments
 	 * 
-	 * @return une liste de point (classe : Point2D)
+	 * @return une liste de points (classe : Point2D)
 	 */
 	
 	public List<Point2D> getTousLesPoints(){

@@ -5,6 +5,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author Emmanuel Vankerkore
+ * @date 27/03/2022
+ * 
+ * La classe Triangle a pour but de définir un triangle qu'il soit quelconque, rectangle, isocéle ou équilatéral.
+ */
+
 public class Triangle {
 	
 	String nom;
@@ -12,6 +19,17 @@ public class Triangle {
 	Point2D b;
 	Point2D c;
 	List<Segment> listeSegmentEligible;
+	
+	/**
+	 * On définit notre constructeur de notre classe:
+	 * 
+	 * @param name : nom que l'on donne à notre triangle
+	 * @param p1 : un premier point (classe : Point2D)
+	 * @param p2 : un second point (classe : Point2D)
+	 * @param p3 : un troisième point (classe : Point2D)
+	 * 
+	 * @attention Le constructeur ne vérifie pas si les 3 points sont bien distincts.
+	 */
 	
 	public Triangle(String name, Point2D p1, Point2D p2, Point2D p3) {
 		setNom(name);
@@ -52,15 +70,35 @@ public class Triangle {
 		this.c = c;
 	}
 	
+	/**
+	 * Un segment est éligible seulement si son équivalent en droite affine n'est pas de la forme suivante:
+	 * 		y = p
+	 * 		x = p'
+	 * 
+	 * La méthode renvoie la liste des segments éligibles.
+	 * 
+	 * @return
+	 */
+	
 	public List<Segment> getListeSegmentEligible(){
 		return listeSegmentEligible;
 	}
+	
+	/**
+	 *  Un segment est éligible seulement si son équivalent en droite affine n'est pas de la forme suivante:
+	 * 		y = p
+	 * 		x = p'
+	 *  
+	 *  La méthode initialise la liste des segments éligibles.
+	 */
 	
 	public void setListeSegmentEligible() {
 		this.listeSegmentEligible = getListeSegmentsEligibles(getTousLesSegments());
 	}
 	
-	
+	/**
+	 * La méthode affichera toutes les informations assoiciées à l'objet.
+	 */
 	
 	public void afficher() {
 		System.out.println(getNom() + " est définit par les 3 points suivants:");
@@ -78,6 +116,12 @@ public class Triangle {
 		}
 	}
 
+	/**
+	 * La méthode récupère dans une liste les 3 segments qui définissent le triangle.
+	 * 
+	 * @return une liste de points (classe : Point2D)
+	 */
+	
 	public List<Segment> getTousLesSegments(){
 		List<Segment> listeDeTousLesSegments = new ArrayList<Segment>();
 		listeDeTousLesSegments.add(new Segment("S1", a, b));
@@ -86,6 +130,12 @@ public class Triangle {
 		return listeDeTousLesSegments;
 	}
 	
+	/**
+	 * La méthode renvoie une liste contenant les trois points du triangle
+	 * 
+	 * @return une liste de points (classe : Point2D)
+	 */
+	
 	public List<Point2D> getTousLesPoints(){
 		List<Point2D> lp = new ArrayList<Point2D>();
 		lp.add(getA());
@@ -93,6 +143,13 @@ public class Triangle {
 		lp.add(getC());
 		return lp;
 	}
+	
+	/**
+	 * La méthode renvoie le point qui fait parti du triangle mais n'appartient pas au segment "seg".
+	 * 
+	 * @param seg : un segment (classe : Segment) du triangle
+	 * @return un point (classe : Point2D) du triangle
+	 */
 	
 	public Point2D getPointNonAppartenantSegment(Segment seg) {
 		for (Point2D p : getTousLesPoints()) {
@@ -103,6 +160,13 @@ public class Triangle {
 		return null;
 	}
 	
+	/**
+	 * La méthode identifie si le point "point" appartient à l'un des trois qui définissent le triangle
+	 * 
+	 * @param point : un point (classe : Point2D)
+	 * @return true s'il appartient au triangle sinon alors non
+	 */
+	
 	public Boolean estUnPointDuTriangle(Point2D point) {
 		for (Point2D p : getTousLesPoints()) {
 			if (p.getX().equals(point.getX()) && p.getY().equals(point.getY())) {
@@ -111,6 +175,14 @@ public class Triangle {
 		}
 		return false;
 	}
+	
+	/**
+	 * La méthode identifie si le point "point" appartient à l'un des trois qui définissent le triangle et le
+	 * 		renvoie.
+	 * 
+	 * @param point : un point (classe : Point2D)
+	 * @return un point (classe : Point2D) du triangle
+	 */
 	
 	public Point2D PointDuTriangle(Point2D point) {
 		for (Point2D p : getTousLesPoints()) {
@@ -121,6 +193,16 @@ public class Triangle {
 		return null;
 	}
 	
+	/**
+	 * La méthode récupère dans une liste les segments qui vont nous servir dans le calcul de l'aire du triangle.
+	 * 
+	 * @param segmentEligible : segment éligible (classe Segment)
+	 * @param intersection : point (classe : Point2D) correspondant à l'intersection du segment éligible et de la
+	 * 						droite affine perpendiculaire calculé avec le point du triangle qui ne fait pas partie
+	 * 						du segment.
+	 * @return liste des segments (classe : Segment)
+	 */
+	
 	public List<Segment> getListSegmentForCalcul(Segment segmentEligible, Point2D intersection){
 		List<Segment> listeSeg = new ArrayList<Segment>(3);
 		listeSeg.add(new Segment("GaucheIntersection", segmentEligible.getPointGauche(), intersection));
@@ -129,12 +211,38 @@ public class Triangle {
 		return listeSeg;
 	}
 	
+	/**
+	 * La méthode calcul l'aire du triangle dans le cas où notre intersection (segment éligible et droite affine 
+	 * perpendiculaire) correspond à un point déjà existant du triangle. Donc on dispose déjà de toutes les
+	 * informations en terme de distance.
+	 * 
+	 * @param segmentEligible : segment éligible (classe Segment)
+	 * @param intersection : point (classe : Point2D) correspondant à l'intersection du segment éligible et de la
+	 * 						droite affine perpendiculaire calculé avec le point du triangle qui ne fait pas partie
+	 * 						du segment.
+	 * @return une valeur correpondant à l'aire du triangle
+	 */
+	
 	public Double calculAireTriangleRectangle(Segment segmentEligible, Point2D intersection) {
 		Segment segmentEligiblePerpendiculaire = new Segment("SegPer", 
 															getPointNonAppartenantSegment(segmentEligible), 
 															PointDuTriangle(intersection));
 		return segmentEligiblePerpendiculaire.getTaille() * segmentEligible.getTaille() / 2;
 	}
+	
+	/**
+	 * La méthode calcul l'aire du triangle dans le cas où notre intersection (segment éligible et droite affine 
+	 * perpendiculaire) ne correspond pas à un point du triangle. Donc on a trois règles de calcul différentes
+	 * selon le positionnement du point "intersection" par rapport au segment "segmentEligible". Les données
+	 * sont toutes stockées dans une map "mapSegDis"
+	 * 
+	 * @param segmentEligible : segment eligible (classe : Segment)
+	 * @param intersection : point (classe : Point2D) correspondant à l'intersection du segment éligible et de la
+	 * 						 droite affine perpendiculaire calculé avec le point du triangle qui ne fait pas partie
+	 * 						 du segment.
+	 * @param mapSegDis : map contenant pour chaque segment sa distance
+	 * @return une valeur correpondant à l'aire du triangle
+	 */
 	
 	public Double calculAireTriangleNonRectangle(Segment segmentEligible, Point2D intersection, Map<String, Double> mapSegDis) {
 		if (segmentEligible.getDispositionPointFromSegment(intersection) == "centre") {
