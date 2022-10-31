@@ -1,0 +1,20 @@
+# le dossier bin 
+
+bin
+
+# tous les fichiers ayant pour extension class
+
+*.class
+*.csv
+
+# tous les dossiers et leurs contenus ayant pour nom resultats
+
+resultats/
+
+# le dossier "un" contenu dans le dossier B
+
+**/B/un/
+
+# Préciser explicitement le dossier ou le fichiers
+
+./DossierQuiNExistePas/FichierQuiNExistePas
