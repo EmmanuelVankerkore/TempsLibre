@@ -68,3 +68,8 @@ Sélectionner la seconde option pour exécuter la macro jusqu'à atteindre la fi
 ![image info](./SourcesImages/ExecutionEndOfThisFile.jpg)
 
 Cliquer sur "Run"
+
+## 4. Prolonger verticalement un curseur
+<br>
+
+Maintenir ( CTRL + SHIFT ) et appuyer sur fléche du haut ou fléche du bas  
