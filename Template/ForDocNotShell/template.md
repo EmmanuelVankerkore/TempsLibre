@@ -53,6 +53,8 @@ Pour croiser les informations de différentes tables on réalise des <span id="i
 
 ## <div id="titleSub">1. Titre</div>
 
+## <div id="titleSub2">1.1 Sous-titre</div> 
+
 ## <div id="titleSub">2. Joindre une image</div>
 
 ![image info] (<span id="param">Chemin relatif du fichier image</span>)
