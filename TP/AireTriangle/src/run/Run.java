@@ -1,8 +1,5 @@
 package run;
 
-import java.util.List;
-import java.util.Map;
-import java.util.function.Function;
 import entities.DroiteAffine;
 import entities.Point2D;
 import entities.Segment;
@@ -11,7 +8,6 @@ import entities.Triangle;
 public class Run {
 	
 	public static void main(String[] args) {
-		System.out.println("Bonjour");
 		
 		Point2D pointA = new Point2D("A", 10.0, -3.0);
 		Point2D pointB = new Point2D("B", 30.0, 4.0);
