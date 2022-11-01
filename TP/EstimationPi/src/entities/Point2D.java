@@ -1,5 +1,7 @@
 package entities;
 
+import calcul.Calcul;
+
 /**
 * @author Emmanuel Vankerkore
 * @date 27/03/2022
@@ -58,5 +60,14 @@ public class Point2D {
 	
 	public void afficher() {
 		System.out.println(getNom() + " --> (" + getX() + " ; " + getY() + ")");
+	}
+	
+	public boolean estQuasiSurCercle() {
+		Double valeurFormuleCercle = Calcul.FormuleCercle(getX(), getY());
+		if (valeurFormuleCercle > 0.9999 && valeurFormuleCercle <= 1) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
