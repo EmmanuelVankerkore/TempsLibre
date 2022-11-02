@@ -47,9 +47,9 @@ public class Record {
 	
 	public void afficher() {
 		System.out.println("id : " + getIdRecord());
-		System.out.println("   taille     : " + getTailleSegmentUnitaire());
-		System.out.println("   nb         : " + getNombreSegments());
-		System.out.println("   estimation : " + getEstimationPi());
+		System.out.println("   taille           : " + getTailleSegmentUnitaire());
+		System.out.println("   nb               : " + getNombreSegments());
+		System.out.println("   estimation de Pi : " + getEstimationPi());
 		
 	}
 }
