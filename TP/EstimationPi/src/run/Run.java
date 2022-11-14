@@ -16,14 +16,16 @@ public class Run {
 	public static void main(String[] args) {
 		ListRecords liRe = new ListRecords();
 		Point2D pHautSegment = new Point2D("t", 0.0, 1.0);
-		liRe = getToutLesEnregistrements(liRe, pHautSegment, 2, 1, 12);
+		liRe = getToutLesEnregistrements(liRe, pHautSegment, 4, 1, 60);
 		liRe.afficher();
 	}
 	
 	public static Point2D getNouveauPoint(Point2D pHautSegment) {
 		Segment sInitiale = new Segment("SegmentTailleDejaConnue", pHautSegment, pPermanent);
 		Point2D pmilieu = sInitiale.getPointDuMilieu();
+		//pmilieu.afficher();
 		DroiteAffine dCentre = new DroiteAffine("droitePassantParCentre", pCentreCercle, pmilieu);
+		//dCentre.afficher();
 		return dCentre.getPointDuCercle();
 	}
 	
