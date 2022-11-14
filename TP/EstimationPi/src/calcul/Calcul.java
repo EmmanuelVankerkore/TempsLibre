@@ -28,7 +28,7 @@ public class Calcul {
 	}
 	
 	public static Double OrdDuPointDepuisDroiteCentreCercle(Double coef) {
-		return Math.sqrt( coef / (1 + Math.pow(coef, 2)) );
+		return coef / ( Math.sqrt( 1 + Math.pow(coef, 2))) ;
 	}
 	
 	public static Double FormuleCercle(Double abs, Double ord) {
