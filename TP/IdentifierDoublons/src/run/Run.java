@@ -8,19 +8,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-
-
 public class Run {
 	
 	static String input = "v4 | v1 | v2 | v3 | v2 | v4 | v5 | v4 | v6 | v10 | v5";
 
 	public static void main(String[] args) {
-		System.out.println("Entrée : \n\n" + input + "\n");
-		List<String> listeAvecDoublons = texteVersListeAvecDoublons(input);
-		Set<String> listeSansDoublons = listeAvecDoublonsVersListeSansDoublons(listeAvecDoublons);
-		Map<String, Integer> elementsOccurences = TrouverNbOccurenceDepuisListeAvecDoublons(listeAvecDoublons, listeSansDoublons);
-		String texteUniquementDoublons = TexteDesDoubons(elementsOccurences); 
-		System.out.println("Sortie : \n\n" + texteUniquementDoublons);
+		afficherInputEtOutput(input, trouverLesElementsEnDoublons(input));
 	}
 	
 	public static List<String> texteVersListeAvecDoublons(String texteAvecDoublons){
@@ -51,5 +44,17 @@ public class Run {
 	
 	public static String enlever3DerniersCaracteres(String texteDesDoublonsImparfait) {
 		return texteDesDoublonsImparfait.substring(0,texteDesDoublonsImparfait.length()-3);
+	}
+	
+	public static String trouverLesElementsEnDoublons(String input) {
+		List<String> listeAvecDoublons = texteVersListeAvecDoublons(input);
+		Set<String> listeSansDoublons = listeAvecDoublonsVersListeSansDoublons(listeAvecDoublons);
+		Map<String, Integer> elementsOccurences = TrouverNbOccurenceDepuisListeAvecDoublons(listeAvecDoublons, listeSansDoublons);
+		return TexteDesDoubons(elementsOccurences); 
+	}
+	
+	public static void afficherInputEtOutput(String input, String output) {
+		System.out.println("Entrée : \n\n" + input + "\n");
+		System.out.println("Sortie : \n\n" + output);
 	}
 }
