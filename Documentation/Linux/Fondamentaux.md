@@ -121,4 +121,18 @@ color:#87CEFA }
 <span id="com">> </span>
 <span id="val">chemin_du_fichier</span>
 
-s
+## <div id="titleSub">15. Mettre en pause l'exécution du script shell</div>
+
+<span id="com">sleep </span>
+<span id="val">nombre_de_secondes</span>
+
+## <div id="titleSub">16. Rendre un script shell directement exécutable</div>
+
+<span id="com">chmod </span>
+<span id="par">-x </span>
+<span id="val">nom_du_fichier.sh</span>
+
+## <div id="titleSub">17. Lancer l'ouverture d'un navigateur internet</div>
+
+<span id="com">navigateur </span>
+<span id="val">adresse_http</span>
