@@ -71,7 +71,7 @@ Activer l'option de recherche dans tous les sous-dossiers
 
 <span id="commande">ls</span>
 
-![image info](./SourcesImages/ls.jpg)
+![image info](./SourcesImages/ls.JPG)
 
 ## 5. Lister l'ensemble des items en fonction de la date de création
 

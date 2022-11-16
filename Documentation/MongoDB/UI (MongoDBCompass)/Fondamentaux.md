@@ -29,14 +29,14 @@ Vocabulaire (SQL / MongoDB)
 ## <span id="titleSub">2. Identifier le serveur </span>
 <br>
 
-![image info](./Images/InfosServeur.png)
+![image info](./Images/InfosServeur.PNG)
 
 <br>
 
 ## <span id="titleSub">3. Accéder aux bases de données du serveur </span>
 <br>
 
-![image info](./Images/BaseDeDonnées.png)
+![image info](./Images/BaseDeDonnées.PNG)
 
 <br>
 
@@ -45,35 +45,35 @@ Vocabulaire (SQL / MongoDB)
 
 Cliquer sur la petite flèche à gauche de la base de données
 
-![image info](./Images/AccéderAuxCollections.png)
+![image info](./Images/AccéderAuxCollections.PNG)
 
 <br>
 
 ## <span id="titleSub">5. Changer la visualisation des documents </span>
 <br>
 
-![image info](./Images/TypeVisualisationDocument.png)
+![image info](./Images/TypeVisualisationDocument.PNG)
 
 Textuelle  (gauche)
 
-![image info](./Images/ExempleVisualisationTextuelle.png)
+![image info](./Images/ExempleVisualisationTextuelle.PNG)
 
 JSON (milieu)
 
-![image info](./Images/ExempleVisualisationJSON.png)
+![image info](./Images/ExempleVisualisationJSON.PNG)
 
 Table (droite)
 
-![image info](./Images/ExempleVisualisationTable1.png)
-![image info](./Images/ExempleVisualisationTable2.png)
-![image info](./Images/ExempleVisualisationTable3.png)
+![image info](./Images/ExempleVisualisationTable1.PNG)
+![image info](./Images/ExempleVisualisationTable2.PNG)
+![image info](./Images/ExempleVisualisationTable3.PNG)
 
 <br>
 
 ## <span id="titleSub">6. Modifier un document </span>
 <br>
 
-![image info](./Images/AffecterUnDocument.png)
+![image info](./Images/AffecterUnDocument.PNG)
 
 <br>
 
@@ -89,11 +89,11 @@ Table (droite)
 
 Cliquer sur le bouton suivant
 
-![image info](./Images/AjouterUnDocument.png)
+![image info](./Images/AjouterUnDocument.PNG)
 
 Cliquer sur le choix proposé
 
-![image info](./Images/NewDocumentImporterOuVierge.png)
+![image info](./Images/NewDocumentImporterOuVierge.PNG)
 
 - Un document vierge
 - Importer un fichier
@@ -103,6 +103,6 @@ Cliquer sur le choix proposé
 ### <span id="titleSubSub">7.1 Importer un fichier </span>
 <br>
 
-![image info](./Images/InterfaceImporterFichierPourCreationDocument.png)
+![image info](./Images/InterfaceImporterFichierPourCreationDocument.PNG)
 
 <br>
