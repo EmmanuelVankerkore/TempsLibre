@@ -19,11 +19,11 @@ Mot de passe : Nt1c0@fr
 
 étape 1 : Identifier l'image ci-dessous en haut à gauche de l'application
 
-![image info](./SourcesImages/SelectionVue.jpg)
+![image info](./SourcesImages/SelectionVue.JPG)
 
 étape 2 : Selectionner toutes les vues ou une vue en particulier
 
-![image info](./SourcesImages/SelectionnerLaVue.jpg)
+![image info](./SourcesImages/SelectionnerLaVue.JPG)
 
 
 ## 2. Créer ses propres suivis (non publics)
@@ -31,7 +31,7 @@ Mot de passe : Nt1c0@fr
 
 étape 1 : Identifier la partie "My Session Reports"
 
-![image info](./SourcesImages/PartieExplorer.jpg)
+![image info](./SourcesImages/PartieExplorer.JPG)
 
 étape 2 : Faire un clic droit sur "My Session Reports"
 
@@ -46,7 +46,7 @@ Mot de passe : Nt1c0@fr
 
 étape 1 : Cliquer sur "Public Session Reports"
 
-![image info](./SourcesImages/PublicSessionReports.jpg)
+![image info](./SourcesImages/PublicSessionReports.JPG)
 
 ## 4. Publier un nouveau process
 <br>
@@ -55,39 +55,39 @@ Mot de passe : Nt1c0@fr
 
 Cliquer droit sur le process "Build/Execute"
 
-![image info](./SourcesImages/DesignerBuildExecute.jpg)
+![image info](./SourcesImages/DesignerBuildExecute.JPG)
 
 Se rendre sur le process "Build"
 
-![image info](./SourcesImages/DesignerBuild.jpg)
+![image info](./SourcesImages/DesignerBuild.JPG)
 
 Cliquer gauche sur "Package With Documentation"
 
-![image info](./SourcesImages/DesignerPackageWithDocumentation.jpg)
+![image info](./SourcesImages/DesignerPackageWithDocumentation.JPG)
 
 Se rendre le dossier "D:\stambiaDesigner\Stambia_Designer_S19-0-27\stambiaRuntime\build\packages" en local
 
 Vous pouvez constatez la présence d'un fichier ayant la forme suivante : {nom_du_process}.pck
 
-![image info](./SourcesImages/LocalExempleFichierPackage.jpg)
+![image info](./SourcesImages/LocalExempleFichierPackage.JPG)
 
 étape 1 : Sélectionner la partie "Deployments"
 
-![image info](./SourcesImages/Deployments.jpg)
+![image info](./SourcesImages/Deployments.JPG)
 
 étape 2 : Sélectionner avec un double cilque un gestionnaire de déploiement
 
-![image info](./SourcesImages/GestionnaireDeDeploiments.jpg)
+![image info](./SourcesImages/GestionnaireDeDeploiments.JPG)
 
 étape 3 : Importer un package (fichier permettant la construction du delivery)
 
-![image info](./SourcesImages/ImporterPackage.jpg)
+![image info](./SourcesImages/ImporterPackage.JPG)
 
 étape 4 : Sélectionner le package sur votre espace de stockage en local
 
 étape 5 : Votre process apparait dans la fenêtre, vous pouvez le drag and drop
 
-![image info](./SourcesImages/PackageImporteDansGestionnaireDeploiement.jpg)
+![image info](./SourcesImages/PackageImporteDansGestionnaireDeploiement.JPG)
 
 En l'état, votre package est :<br>
   importé :     oui<br>
@@ -101,15 +101,15 @@ Le livrable est :<br>
 
 étape 7 : Sélectionner un schema de déploiement
 
-![image info](./SourcesImages/SchemaDeploiement.jpg)
+![image info](./SourcesImages/SchemaDeploiement.JPG)
 
 étape 8 : Ajouter un schéma associé à un runtime et vérifier qu'il n'y pas pas d'informations manquantes
 
-![image info](./SourcesImages/ConfigurationSchemaDeploiement.jpg)
+![image info](./SourcesImages/ConfigurationSchemaDeploiement.JPG)
 
 étape 9 : Selectionner la spécification de déploiement
 
-![image info](./SourcesImages/SelectionSpecificationDeploiement.jpg)
+![image info](./SourcesImages/SelectionSpecificationDeploiement.JPG)
 
 étape 10 : Construction du delivery, clique droit et selectionner "Build Deliveries"
 
@@ -136,17 +136,17 @@ C'est fini, le process est publié !
 
 étape 1 : Importer le package associé à la nouvelle version du process
 
-![image info](./SourcesImages/ImporterPackage.jpg)
+![image info](./SourcesImages/ImporterPackage.JPG)
 
 étape 2 : Observer à présent votre process notifié de la façon suivante
 
-![image info](./SourcesImages/ConflitApresImportPackage.jpg)
+![image info](./SourcesImages/ConflitApresImportPackage.JPG)
 
 étape 3 : Observer la notification associée au livrable publié
 
 Explication : Lorsque l'on importe un nouveau package d'un process déjà existant, Stambia Analytics considère qu'il faut prendre en compte le package le plus récent. Mais le package le plus récent ne correspond pas à la version du livrable publié.
 
-![image info](./SourcesImages/PackageMissMatch.jpg)
+![image info](./SourcesImages/PackageMissMatch.JPG)
 
 Il nous faut donc construire un nouveau livrable à partir nouveau package
 
@@ -163,7 +163,7 @@ Il nous faut donc construire un nouveau livrable à partir nouveau package
 
 étape 1 : Sélectionner l'ancien package
 
-![image info](./SourcesImages/SelectionOldPackage.jpg)
+![image info](./SourcesImages/SelectionOldPackage.JPG)
 
 étape 2 : Définir le package comme celui à utiliser lors de la construction
 
@@ -174,11 +174,11 @@ Il nous faut donc construire un nouveau livrable à partir nouveau package
 
 étape 1 : Se rendre dans la section "Runtimes"
 
-![image info](./SourcesImages/Runtimes.jpg)
+![image info](./SourcesImages/Runtimes.JPG)
 
 étape 2 : Double clique gauche sur le runtime
 
-![image info](./SourcesImages/SelectionDuRuntimes.jpg)
+![image info](./SourcesImages/SelectionDuRuntimes.JPG)
 
 étape 3 : Ouvrir "wsdl" pour les web services ou "default" pour les autres
 
@@ -191,11 +191,11 @@ Une nouvelle fenêtre apparaît, c'est l'historique des exécution du process su
 
 étape 1 : Se rendre dans la section "Runtimes"
 
-![image info](./SourcesImages/Runtimes.jpg)
+![image info](./SourcesImages/Runtimes.JPG)
 
 étape 2 : Double clique gauche sur le runtime
 
-![image info](./SourcesImages/SelectionDuRuntimes.jpg)
+![image info](./SourcesImages/SelectionDuRuntimes.JPG)
 
 étape 3 : Ouvrir "wsdl" pour les web services ou "default" pour les autres
 
@@ -203,14 +203,14 @@ Une nouvelle fenêtre apparaît, c'est l'historique des exécution du process su
 
 étape 5 : Selection une exécution est vous trouverez les paramètres avec lesquels il a été lancé
 
-![image info](./SourcesImages/ParameterExecutionProcessRuntime.jpg)
+![image info](./SourcesImages/ParameterExecutionProcessRuntime.JPG)
 
 ## 9. Vérifier que l'on est bien connecté aux runtimes
 <br>
 
 étape 1 : Se rendre dans l'onglet "Logs"
 
-![image info](./SourcesImages/ConnectionAuxRuntimes.jpg)
+![image info](./SourcesImages/ConnectionAuxRuntimes.JPG)
 
 ## 10. Relancer l'application Apache Tomcat
 <br>

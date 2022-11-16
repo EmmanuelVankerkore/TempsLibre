@@ -37,10 +37,11 @@ color:#87CEFA }
 ## <div id="titleSub">3. Lister l'ensemble des fichiers du répertoire actuel</div>
 
 <span id="com">ls </span>
-<span id="par">-R -l</span>
+<span id="par">-R -l -a</span>
 
-<span id="not"> R pour préciser les fichiers de tous les sous-répertoires. </span>
-<span id="not"> l pour préciser plus de détail sur les fichiers (taille, date de dernière modification, créateur, ...).</span>
+<span id="not"> R pour préciser les fichiers de tous les sous-répertoires. </span><br>
+<span id="not"> l pour préciser plus de détail sur les fichiers (taille, date de dernière modification, créateur, ...).</span><br>
+<span id="not"> a pour préciser les fichiers cachés.</span>
 
 
 ## <div id="titleSub">4. Rechercher l'emplacement d'un fichier</div>
@@ -119,3 +120,5 @@ color:#87CEFA }
 <span id="val">commande </span>
 <span id="com">> </span>
 <span id="val">chemin_du_fichier</span>
+
+s
