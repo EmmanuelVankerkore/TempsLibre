@@ -136,3 +136,7 @@ color:#87CEFA }
 
 <span id="com">navigateur </span>
 <span id="val">adresse_http</span>
+
+## <div id="titleSub">18. Effacer toute la console</div>
+
+<span id="com">clear </span>

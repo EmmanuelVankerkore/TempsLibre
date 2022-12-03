@@ -95,36 +95,45 @@ Nous précisions ici les ports car l'image correspond à un serveur web.
 <br>
 
 <div id="not">"port-4" correspond au port de l'ordiateur et "port_2" correspont au port de Docker. On peut ensuite se rendre sur l'adresse http://127.0.0.1:port_4 .</div>
+
+## <div id="titleSub">5. Lancer l'exécution d'un conteneur existant</div>
+
+<span id="com">docker start </span>
+<span id="val">conteneur_id</span>
 <br>
 
-## <div id="titleSub">5. Arrêter l'exécution un conteneur en local</div>
+<span id="not">Préciser </span>
+<span id="val">-i</span>
+<span id="not">après "start", afin d'interagir avec avec le conteneur.</span>
+
+## <div id="titleSub">6. Arrêter l'exécution un conteneur en local</div>
 
 <span id="com">docker stop </span>
-<span id="val"> conteneur_id</span>
+<span id="val">conteneur_id</span>
 <br>
 
 <div id="not">La valeur "conteneur_id" se retrouve facilement via la commande du point 2. </div>
 
-## <div id="titleSub">6. Ouvrir un shell bash depuis un conteneur en cours d'exécution</div>
+## <div id="titleSub">7 Ouvrir un shell bash depuis un conteneur en cours d'exécution</div>
 
 <span id="com">docker exec </span>
 <span id="par">-ti </span>
 <span id="val"> conteneur_id bash</span>
 <br>
 
-## <div id="titleSub">7. Laisser Docker supprimer les ressources inutiles</div>
+## <div id="titleSub">8. Laisser Docker supprimer les ressources inutiles</div>
 
 <span id="com">docker system </span>
 <span id="par">prune </span>
 <br>
 
-## <div id="titleSub">8. Supprimer un conteneur à la main</div>
+## <div id="titleSub">9. Supprimer un conteneur à la main</div>
 
 <span id="com">docker rm </span>
 <span id="val">conteneur_id </span>
 <br>
 
-## <div id="titleSub">9. Renommer une image</div>
+## <div id="titleSub">10. Renommer une image</div>
 
 <span id="com">docker image tag </span>
 <span id="val">image_id </span>
@@ -132,7 +141,7 @@ Nous précisions ici les ports car l'image correspond à un serveur web.
 <span id="val">nouveau_nom_du_tag</span>
 <br>
 
-## <div id="titleSub">10. Supprimer une image</div>
+## <div id="titleSub">11. Supprimer une image</div>
 
 <span id="com">docker rmi </span>
 <span id="par">--force</span>
