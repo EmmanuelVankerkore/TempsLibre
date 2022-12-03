@@ -6,6 +6,7 @@
 #com {color:#FF00FF; font-size:18px "Carnivalee Freakshow"}
 #par {color:#32CD32; font-size:18px "Carnivalee Freakshow"}
 #val {color:#87CEFA; font-size:18px "Carnivalee Freakshow"}
+#not {color:#1E90FF; font-size:18px "Carnivalee Freakshow"}
 </style>
 </head>
 
@@ -98,19 +99,22 @@ Toutes les modifications enregistrées après le commit "commit1" ont été annu
 
 <span id="com">git branch </span>
 <span id="par">-M </span>
-<span id="val">"nouveau_nom_de_la_branche"</span>
+<span id="val">"nom_de_la_nouvelle_branche"</span>
 
 ## <div id="titleSub">11. Définir un accès vers un espace GitHub</div>
 
 <span id="com">git remote </span>
 <span id="par">add </span>
-<span id="val">nom_de_la_telecommande "url_GitHub"</span>
+<span id="val">"nom_de_la_telecommande" "url_GitHub"</span>
 
 ## <div id="titleSub">12. Pousser ses modification sur GitHub</div>
 
 <span id="com">git push </span>
 <span id="par">-u </span>
-<span id="val">nom_de_la_telecommande "nom_de_la_branche_GitHub"</span>
+<span id="val">"nom_de_la_telecommande" "nom_de_la_branche_GitHub"</span>
+
+<span id="par">-u </span>
+<span id="not">permet d'initialiser un stream qui servira de référence pour chaque commandes pull et push.</span>
 
 ## <div id="titleSub">13. Récupèrer l'intégration d'un répository GitHub</div>
 
@@ -120,9 +124,49 @@ Toutes les modifications enregistrées après le commit "commit1" ont été annu
 ## <div id="titleSub">14. Récupérer les données d'une branche spécifique sur un répository GitHub</div>
 
 <span id="com">git pull </span>
-<span id="val">nom_de_la_telecommande "nom_de_la_branche_GitHub"</span>
+<span id="val">"nom_de_la_telecommande" "nom_de_la_branche_GitHub"</span>
 
 ## <div id="titleSub">15. Fusionner avec une tierce branche en local</div>
 
 <span id="com">git merge </span>
 <span id="val">"nom_de_la_branche"</span>
+
+## <div id="titleSub">16. Lister l'ensemble des télécommandes</div>
+
+<span id="com">git remote </span>
+
+## <div id="titleSub">17. Supprimer une télécommande</div>
+
+<span id="com">git remote rm </span>
+<span id="val">"nom_de_la_télécommande"</span>
+
+## <div id="titleSub">18. Redéfinir une télécommande</div>
+
+<span id="com">git remote</span>
+<span id="par">set-url</span>
+<span id="val">"nom_d_une_télécommande" "URL_github"</span>
+
+## <div id="titleSub">19. Afficher les informations d'une télécommande</div>
+
+<span id="com">git remote</span>
+<span id="par">show</span>
+<span id="val">"nom_d_une_télécommande"</span>
+
+## <div id="titleSub">999. En cas de problème</div>
+
+## <div id="titleSub2">Lorsque l'on essaie de push, on a le message d'erreur suivant</div>
+
+```
+remote: Support for password authentication was removed on August 13, 2021.
+```
+
+1. Dans Github, se rendre dans "Settings"
+2. Sur le côté gauche, cliquer sur "Developer settings"
+3. Sur le côté gauche, cliquer sur "Personal access tokens"
+4. Sur le côté gauche, cliquer sur "Tokens (classic)"
+5. Cliquer sur Generate new token
+6. Définir la temporalité du nouveau token
+7. Définir le périmétre du nouveau token
+8. Une fois le token généré, le stocker précieusement
+9. git remote set-url origin https://((token))@github.com/((identifiant))/((repository)).git
+10. git push -u origin main
