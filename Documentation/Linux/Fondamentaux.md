@@ -140,3 +140,30 @@ color:#87CEFA }
 ## <div id="titleSub">18. Effacer toute la console</div>
 
 <span id="com">clear </span>
+
+## <div id="titleSub">19. Réaliser un téléchargement</div>
+
+<span id="com">wget </span>
+<span id="val">URL_telechargement </span>
+
+## <div id="titleSub">20. Décompresser une archive</div>
+
+<span id="com">tar xzf </span>
+<span id="val">archive </span>
+
+## <div id="titleSub">21. Tester l'ouverture d'un port depuis un serveur</div>
+
+<span id="com">telnet </span>
+<span id="val">serveur port</span>
+
+Dans notre cas : serveur --> localhost
+
+## <div id="titleSub">22. Interrompre une commande en cours</div>
+
+Utiliser le raccourci clavier : Ctrl + C
+
+## <div id="titleSub">23. Copier et coller du texte</div>
+
+Utiliser les raccourcis clavier suivants :
+- Copier --> Ctrl + Shift + C
+- Coller --> Ctrl + Shift + V
