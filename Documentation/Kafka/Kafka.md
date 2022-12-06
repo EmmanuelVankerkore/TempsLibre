@@ -138,7 +138,17 @@ Il faut donc utiliser la commande suivante :<br>
 <span id="par">--topic</span>
 <span id="val">blabla</span>
 
-## <div id="titleSub">7 Consumer</div>
+### <div id="titleSub2">6.4 Modifier le nombre de partitions d'un topic</div>
+
+<span id="val">./bin/kafka-topics.sh</span>
+<span id="par">--alter --bootstrap-server</span>
+<span id="val">localhost:9092</span>
+<span id="par">--topic</span>
+<span id="val">blabla</span>
+<span id="par">--partitions</span>
+<span id="val">2</span>
+
+## <div id="titleSub">7 Producer</div>
 
 ### <div id="titleSub2">7.1 Définir la console active comme le producer</div>
 
@@ -169,3 +179,14 @@ Il faut donc utiliser la commande suivante :<br>
 <span id="par">--topic</span>
 <span id="val">blabla</span>
 <span id="par">--from-beginning</span>
+
+### <div id="titleSub2">8.3 Reprendre tous les message qui n'ont pas été consommé par le consumer</div>
+
+<span id="val">./bin/kafka-console-consumer.sh</span>
+<span id="par">--bootstrap-server</span>
+<span id="val">localhost:9092</span>
+<span id="par">--topic</span>
+<span id="val">blabla</span>
+<span id="par">--consumer-property</span>
+<span id="par">group.id=</span>
+<span id="val">nomgroupe</span>
