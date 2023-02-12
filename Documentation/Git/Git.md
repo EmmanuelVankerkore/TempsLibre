@@ -152,6 +152,15 @@ Toutes les modifications enregistrées après le commit "commit1" ont été annu
 <span id="par">show</span>
 <span id="val">"nom_d_une_télécommande"</span>
 
+## <div id="titleSub">20. Supprimer du repository local un fichier qui n'est physiquement plus présent</div>
+
+<span id="com">git rm</span>
+<span id="par">-r</span>
+<span id="val">"nom_du_fichier"</span>
+
+<span id="par">-r </span>
+<span id="not">permet de préciser la récursivité sur l'ensemble d'un dossier par exemple.</span>
+
 ## <div id="titleSub">999. En cas de problème</div>
 
 ## <div id="titleSub2">Lorsque l'on essaie de push, on a le message d'erreur suivant</div>
