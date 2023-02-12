@@ -1,0 +1,8 @@
+Description du projet                       --> oui
+Description                                 --> non
+Prévisualiser l'image                       --> oui
+Paramètres_Statut & Logs                    --> non
+Paramètres_Paramètres supplémentaires       --> non
+Liste des contextes_1                       --> non
+Liste des composants_1                      --> non
+Description des composants_1                --> non
