@@ -93,7 +93,7 @@ Sur la formation "Gérez des flux de données temps réel" sur Openclassrooms, i
 <span id="val">localhost:2181</span>
 <span id="par">--replication-factor</span>
 <span id="val">1</span>
-<span id="par">--partition</span>
+<span id="par">--partitions</span>
 <span id="val">1</span>
 <span id="par">--topic</span>
 <span id="val">blabla</span>
@@ -119,7 +119,7 @@ Il faut donc utiliser la commande suivante :<br>
 <span id="val">localhost:9092</span>
 <span id="par">--replication-factor</span>
 <span id="val">1</span>
-<span id="par">--partition</span>
+<span id="par">--partitions</span>
 <span id="val">1</span>
 <span id="par">--topic</span>
 <span id="val">blabla</span>
