@@ -50,38 +50,43 @@ print(liste_02[liste_02.index('U', 0, len(liste_02))])
 # Sortir un chiffre compris entre 10 000 et 99 999
 print(random.randint(10000,99999))
 
-dico_emplacement_message = {'*' : 0, ':' : 1, '+' : 2, ',' : 3, '$' : 4, '!' : 5, '.' : 6, '%' : 7}
-dico_indice_sequence = {'X' : 0, 'K' : 1, 'V' : 2, 'B' : 3, 'L' : 4, 'A' : 5, 'F' : 6}
-
-print(dico_emplacement_message)
-print(dico_indice_sequence)
+dico_emplacement_message = {'*' : 0,
+                            ':' : 1, 
+                            '+' : 2, 
+                            ',' : 3, 
+                            '$' : 4, 
+                            '!' : 5, 
+                            '.' : 6, 
+                            '%' : 7}
+dico_indice_sequence = {'X' : 0, 
+                        'K' : 1, 
+                        'V' : 2, 
+                        'B' : 3, 
+                        'L' : 4, 
+                        'A' : 5, 
+                        'F' : 6}
 
 def TrouverCle(dictionnaire, valeur):
     for key, value in dictionnaire.items():
         if dictionnaire[key] == valeur:
             return key
-        
-print(TrouverCle(dico_emplacement_message, 2))
-print(TrouverCle(dico_indice_sequence, 5))
 
 def chiffre(dictionnaire, valeur_num):
     base = len(dictionnaire)
-    if valeur_num > base*base:
-        return 0
+    if valeur_num >= base*base:
+        car1 = math.floor(valeur_num / (base*base))
+        car2 = math.floor((valeur_num - base*base * car1 ) / base) 
+        car3 = valeur_num - (car1 * base * base) - (car2 * base)
+        resultat = str(TrouverCle(dictionnaire, car1)) + str(TrouverCle(dictionnaire, car2)) + str(TrouverCle(dictionnaire, car3))
+        #print(str(valeur_num) + ' : ' + resultat + ' --> ' + str(car1) + ' * ' + str(base*base) + ' + ' + str(car2) + ' * ' + str(base) + ' + ' + str(car3))
     else:
-        resultat = TrouverCle(dictionnaire, 0)
-        car2 = math.ceil((valeur_num+1) / base)
-        print(car2)
-        resultat = resultat + str(TrouverCle(dictionnaire, car2))
-        car3 = (valeur_num+1) - ((base-1) * car2)
-        print(car3)
-        resultat = resultat + str(TrouverCle(dictionnaire, car3))
-        return resultat
-            
+        car2 = math.floor((valeur_num) / base)
+        car3 = (valeur_num) - ((base) * car2)
+        resultat = TrouverCle(dictionnaire, 0) + str(TrouverCle(dictionnaire, car2)) + str(TrouverCle(dictionnaire, car3))
+        #(str(valeur_num) + ' : ' + resultat + ' --> ' + str(car2) + ' * ' + str(base) + ' + ' + str(car3))
+    return resultat
 
-#print(chiffre(dico_emplacement_message, 54))
-#print(chiffre(dico_indice_sequence, 23))
-
-for i in range(20,30):
-    print(chiffre(dico_emplacement_message, i))
-    print(chiffre(dico_indice_sequence, i))
+for i in range(30, 90):
+    #chiffre(dico_emplacement_message, i)
+    chiffre(dico_indice_sequence, i)
+    
