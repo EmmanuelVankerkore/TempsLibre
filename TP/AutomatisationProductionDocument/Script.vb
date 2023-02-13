@@ -1294,7 +1294,7 @@ Public Sub custom_log_build()
     Next i
     
     'Il semblerai que pour appeler le fichier il faut procéder ainsi :
-    '       #[nom de variable qui renvoie à la valeur du FreeFile]
+    '       #[nom de la variable qui renvoie à la valeur du FreeFile]
     Close #numfich
 End Sub
 
@@ -1351,18 +1351,18 @@ __S2__
 '================================================================================
 
 Public Function TempsAvecCentiemesDeSeconde() As String
-'par Excel-Malin.com ( https://excel-malin.com )
+    'par Excel-Malin.com ( https://excel-malin.com )
 
-On Error GoTo Erreur
+    On Error GoTo Erreur
 
-Dim Maintenant As Date
-Maintenant = Now()
+    Dim Maintenant As Date
+    Maintenant = Now()
 
-TempsAvecCentiemesDeSeconde = Format(Maintenant, "hh:mm:ss:") & Right(Format(Timer, "#0.00"), 2)
-Exit Function
+    TempsAvecCentiemesDeSeconde = Format(Maintenant, "hh:mm:ss:") & Right(Format(Timer, "#0.00"), 2)
+    Exit Function
 
-Erreur:
-TempsAvecCentiemesDeSeconde = ""
+    Erreur:
+    TempsAvecCentiemesDeSeconde = ""
 End Function
 
 __C1__
@@ -1635,8 +1635,6 @@ Public Sub remplir_test_des_conditions(ByVal nom_parcours_extraction As String)
         For j = 1 To num_colonne_max_extraction Step 1
             'On récupère le nom de la variable qui lui ai associé
             nom_variable_extraction = retrouve_nom_variable("Extraction", j)
-            'On récupère la valeur de la variable associé à l'individu
-            'Valeur_modalite =
         Next j
     Next i
 
@@ -1737,14 +1735,6 @@ Public Sub Save_as_format_pdf(ByVal feuille As String, _
                                     IncludeDocProperties:=True, _
                                     IgnorePrintAreas:=False, _
                                     OpenAfterPublish:=False
-                                    
-    
-        'Type permet d'indiquer le format du fichier numérique
-        'Filename correspond au chemin complet où doit être stocké le fichier
-        'Quality correspond à la qualité du document si elle doit être minimale ou standard
-        'IncludeDocProperties ??? (Inclure les propriétés du document)
-        'IgnorePrintAreas ??? (Ignore les zones d'impression)
-        'OpenAfterPublish si True permet de visualiser le document après sa création
     
     'Remettre le msgbox d'alerte
     Application.DisplayAlerts = True
@@ -1918,21 +1908,7 @@ Public Function Parametrage_avant_execution_valide2() As String
     'On vérifie que les variables référencées sont les mêmes que celles en base
     If presence_incoherence_Base_VariablesRef2 Then
         y_a_une_alerte = True
-        
-    
-    'On vérifie que la variable agrégée est la même que celle référencée
-    
-    'On vérifie que le nombre de variable quali est cohérent
-    
-    'On vérifie que les variables quali sont les mêmes que celles référencées
-    
-    'On vérifie que chaque modalité de variable quali est présente en base
-    
-    'On vérifie que chaque variable_modalité dans "test des conditions" est bien référencé dans "Référencement"
-    
-    'On vérifie la cohérence entre les codes valeurs de "Test des conditions" et "Valeurs calculées"
-    
-    'On vérifie la cohérence entre les codes valeurs de "Valeurs calculées" et "Fiche"
+    End If  
         
     Set f_R = Nothing
     Set f_Ds = Nothing
@@ -2292,14 +2268,7 @@ Public Sub Lancer_automatisation_PDF()
     Call Preparation_donnees.restriction_sur_variable("Données_sources", _
                                                       "Référencement", _
                                                       "A3")
-                                                      
-    'On vérifie que toutes les variables sont référencées en base
-    'If presence_incoherence_Base_VariablesRef(nb_variables) = False Then
-        'MsgBox ("Une ou plusieurs variables référentes ne correspondent pas à celles en base. Corriger l'erreur, recharger la base de données et relancer la macro.")
-        'Exit Sub
-    'End If
-    
-                                                      
+                                                                                                
         '*******************************
         ' Modification des non-reponses
         '*******************************
@@ -2342,9 +2311,6 @@ Public Sub Lancer_automatisation_PDF()
     Call Preparation_donnees.lister_parcours("Référencement", _
                                             cellule_haut_parcours_Ds, _
                                             "C2")
-                                            
-    'On supprime le terme "Licence professionnelle" en début d'intitulé de parcours
-    'Call Preparation_donnees.supprime_LP_de_la_modalite
                                             
         '********************************************
         ' Paramétrage de la feuille Valeur Calculées
@@ -2637,7 +2603,6 @@ Public Sub Lancer_automatisation_PDF()
     Set f_E = Nothing
     Set f_Vc = Nothing
     Set f_Tdc = Nothing
-    'Set f_Pc = Nothing
     Set f_F = Nothing
                 
 End Sub
@@ -3078,12 +3043,8 @@ Public Sub trie_selon_une_variable(ByVal feuille As String, _
     Dim tri As String
     
     pdd = feuille + "!" + transforme_en_cellule_verou(cellule_hg) + ":" + transforme_en_cellule_verou(cellule_bd)
-    'pdd_pour_eval = "f_temp!$A$1:$B$" & str(Worksheets("f_temp").Range("A1").End(xlDown).Row)
-    'pdd_pour_eval = Mid(pdd_pour_eval, 1, 15) + Mid(pdd_pour_eval, 17)
     
     tri = colonne_haut + ":" + colonne_bas
-    'col_de_tri = "B1:B" & str(Worksheets("f_temp").Range("A1").End(xlDown).Row)
-    'col_de_tri = Mid(col_de_tri, 1, 4) + Mid(col_de_tri, 6)
     
     ActiveWorkbook.Worksheets(feuille).Sort.SortFields.Clear
     If croissant = True And entete = True Then
@@ -4624,11 +4585,6 @@ Public Sub automatisation_fiches_Eric()
     Set f_Tdc = Worksheets("Test_des_conditions")
     Set f_F = Worksheets("Fiche")
     
-    'compteur_boucle = 0
-    'compteur_progression = 0
-    'compteur_fiches_publies = 0
-    'compteur_a_publier = 0
-    
     'Permet de désactiver la mise à jour de la visualisation de la fenêtre
     Application.ScreenUpdating = False
     
@@ -4637,9 +4593,6 @@ Public Sub automatisation_fiches_Eric()
     
     'Les recalculs ne se font plus automatiquement
     Application.Calculation = xlCalculationManual
-    
-    'Augmente la hauteur du formulaire pour laisser apparaître la barre de progression
-    'Chargement.Height = 172.5
     
         '**************************************
         ' Initialisation des variables stables
@@ -4743,10 +4696,6 @@ Public Sub automatisation_fiches_Eric()
                                                             cellule_bas_colonne_tri_Ds)
 
     End If
-                                                    
-    'On stocke dans une variable le nom de la cellule où commence la première modalité de la variable parcours
-    'cellule_haut_parcours_Ds = Tableau.lettre_colonne_var_recherchee("Données_sources", _
-                                                                     intitule_var_parcours) + CStr(2)
                                                                      
     'On rédige dans la feuille "Référencement" l'ensemble des modalité de la variable comparée répertoriés dans la feuille "Données_sources"
     Call Preparation_donnees.lister_parcours("Référencement", _
@@ -4789,15 +4738,7 @@ Public Sub automatisation_fiches_Eric()
     End If
                                                     
     'Procédure qui va rédiger un tableau temporaire dans la feuille "Valeurs_calculées" pour le calcul des différentes statistiques
-    Call Test_des_conditions.redige_tableau_annexe_vierge_V2
-    
-    'Chargement.etape1.Font.Bold = True
-    'Chargement.etape1.ForeColor = RGB(0, 255, 0)
-    'DoEvents
-    
-    'On compte le nombre d'occurence correspondant à 1%
-    'nb_occ_1_pct = Int(((f_Ds.Range("A1").End(xlDown).Row - 1) * nb_variables) / 100)
-        
+    Call Test_des_conditions.redige_tableau_annexe_vierge_V2 
            
     'Dans le cas où l'on doit comparé une granularité à une autre
     If intitule_var_parcours_0 <> "" Then
@@ -4809,29 +4750,24 @@ Public Sub automatisation_fiches_Eric()
         'On boucle pour chaque champs
         For g = 1 To 1 Step 1 'nb_total_champs
         
-        'On supprime l'intégralité des colonnes C et F de la feuille "Test des conditions"
-        'f_Tdc.Range("F2:F457").ClearContents
-        
-        'Call Extraction.ClearClipboard
-        
-        'On récupère l'intitulé du champs
-        intitule_modalite_champs = f_R.Range("D2").Offset(g, 0).Value
-        
-        'On copie-colle les étudiants appartenant au champs depuis "Données_sources" vers "Extraction2"
-        Call Preparation_donnees.extrait_les_donnees("Données_sources", _
-                                                    "Extraction2", _
-                                                    intitule_var_parcours_0, _
-                                                    intitule_modalite_champs)
-                                                    
-        'On applique une coloration qui détermine quelles étapes sont rattachées au champs
-        Call Référencement.coloration_etape_du_champs("Extraction2", _
-                                                    "Référencement", _
-                                                    intitule_modalite_champs, _
-                                                    intitule_var_parcours, _
-                                                    "C2")
-                                                            
-        'On compte le nombre d'étudiants présent dans le champs (-1 car en fait on repère le numéro de la ligne)
-        nb_etudiants_E2 = Tableau.num_der_lignes("Extraction2")
+            'On récupère l'intitulé du champs
+            intitule_modalite_champs = f_R.Range("D2").Offset(g, 0).Value
+            
+            'On copie-colle les étudiants appartenant au champs depuis "Données_sources" vers "Extraction2"
+            Call Preparation_donnees.extrait_les_donnees("Données_sources", _
+                                                        "Extraction2", _
+                                                        intitule_var_parcours_0, _
+                                                        intitule_modalite_champs)
+                                                        
+            'On applique une coloration qui détermine quelles étapes sont rattachées au champs
+            Call Référencement.coloration_etape_du_champs("Extraction2", _
+                                                        "Référencement", _
+                                                        intitule_modalite_champs, _
+                                                        intitule_var_parcours, _
+                                                        "C2")
+                                                                
+            'On compte le nombre d'étudiants présent dans le champs (-1 car en fait on repère le numéro de la ligne)
+            nb_etudiants_E2 = Tableau.num_der_lignes("Extraction2")
         
                 '============================
                 ' Boucle sur chaque étudiant
@@ -4849,14 +4785,6 @@ Public Sub automatisation_fiches_Eric()
                 
                 'On boucle pour chaque variable
                 For j = 1 To nb_variables Step 1
-                
-                    'compteur_boucle = compteur_boucle + 1
-                    'If compteur_boucle Mod nb_occ_1_pct = 0 Then
-                        'compteur_progression = compteur_progression + 1
-                        'Chargement.dynamique.Width = compteur_progression * 2
-                        'Chargement.pourcentage.Value = compteur_progression & "%"
-                        'DoEvents
-                    'End If
                 
                     'On récupère le nom de la variable dans le tableau de la feuille "Extraction2"
                     nom_variable_E2 = Tableau.retrouve_nom_variable("Extraction2", j)
@@ -4962,11 +4890,6 @@ Public Sub automatisation_fiches_Eric()
                 
                 Next l
                 
-            'If i = 21 Then
-                'f_R.Range("L23").Value = Time
-                'MsgBox ("Good!")
-            'End If
-                
             Next i
             
             'On récupère le numéro de ligne correspondant à l'endroit où l'on va retrouver les différents code_valeur soumis au calcul d'une statistique
@@ -5054,22 +4977,11 @@ Public Sub automatisation_fiches_Eric()
                         'On boucle pour chaque variable
                         For j = 1 To nb_variables Step 1
                         
-                            'compteur_boucle = compteur_boucle + 1
-                            'If compteur_boucle Mod nb_occ_1_pct = 0 Then
-                                'compteur_progression = compteur_progression + 1
-                                'Chargement.dynamique.Width = compteur_progression * 2
-                                'Chargement.pourcentage.Value = compteur_progression & "%"
-                                'DoEvents
-                            'End If
-                        
                             'On récupère le nom de la variable dans le tableau de la feuille "Extraction"
                             nom_variable_E = Tableau.retrouve_nom_variable("Extraction", j)
                             
                             'On récupére la valeur de la variable dans le tableau de la feuille "Extraction"
                             valeur_variable_E = f_E.Cells(i, j).Value
-                            
-                            'On récupère le numéro de la dernière ligne du tableau de la feuille "Test_des_conditions"
-                            'num_ligne_max_Tdc = Tableau.num_der_lignes("Test_des_conditions")
                             
                                 '==============================
                                 ' Boucle sur chaque conditions
@@ -5266,14 +5178,6 @@ Public Sub automatisation_fiches_Eric()
                 'On boucle pour chaque variable
                 For j = 1 To nb_variables Step 1
                 
-                    'compteur_boucle = compteur_boucle + 1
-                    'If compteur_boucle Mod nb_occ_1_pct = 0 Then
-                        'compteur_progression = compteur_progression + 1
-                        'Chargement.dynamique.Width = compteur_progression * 2
-                        'Chargement.pourcentage.Value = compteur_progression & "%"
-                        'DoEvents
-                    'End If
-                
                     'On récupère le nom de la variable dans le tableau de la feuille "Extraction"
                     nom_variable_E = Tableau.retrouve_nom_variable("Extraction", j)
                     
@@ -5395,70 +5299,21 @@ Public Sub automatisation_fiches_Eric()
             
     End If
     
-    'Procédure qui va remplacer les valeurs manquantes "" par 0
-    'Call Valeurs_calculées.replace_Vide_par_0("Valeurs_calculées")
-    
-    'Chargement.etape2.Font.Bold = True
-    'Chargement.etape2.ForeColor = RGB(0, 255, 0)
-    'DoEvents
-    
-    'On demande à l'utilisateur s'il souhaite obtenir les fiches dont le nombre
-    'If MsgBox("Souhaitez-vous publier les fiches dont le nombre de répondants est inférieur ou égale à 5 ?", vbYesNo) = vbYes Then
-
-        'acceptation_petits_effectifs = True
-        
-    'Else
-    
-        'Procédure qui va marquer entièrement les lignes correspondants au parcours que l'on ne souhaite pas afficher
-        'Call Valeurs_calculées.reperage_fiches_non_publiees("cd_V24", 5)
-        
-    'End If
-    
     f_R.Range("L23").Value = Time
     
     'On récupère le nom du chemin qui pointe vers le dossier où l'utilisateur désire enregistré ces fiches
     chemin = f_F.Range("AU2").Value
     
     Application.Calculation = xlCalculationAutomatic
-        
-    'On détermine le nombre de fiche à produire
-    'If acceptation_petits_effectifs = False Then
-    
-        'For g = 2 To f_Vc.Range("A1").End(xlDown).Row Step 1
-            
-            'If f_Vc.Cells(g, 1).Interior.Color <> RGB(0, 255, 255) Then
-            
-                'compteur_a_publier = compteur_a_publier + 1
-            
-            'End If
-            
-        'Next g
-        
-    'Else
-    
-        'For g = 2 To f_Vc.Range("A1").End(xlDown).Row Step 1
-            
-            'compteur_a_publier = compteur_a_publier + 1
-            
-        'Next g
-        
-    'End If
     
         '============================
         ' Boucle sur chaque parcours
         '============================
-        
-    'num_der_col_Vc = Tableau.num_max_colonne_droite("Valeurs_calculées", _
-                                                    "A1")
-    ' 1 to 50
-    ' 51 to 64
-    ' 65 To 68
-    ' 69 to nb_total_parcours
     
     For h = 1 To 50 Step 1 'nb_total_parcours
     
         'On test si la fiche est publiable
-        'If Valeurs_calculées.est_parcours_avec_X_repondants_ou_moins(h + 1) = False Or _
+        If Valeurs_calculées.est_parcours_avec_X_repondants_ou_moins(h + 1) = False Or _
             (Valeurs_calculées.est_parcours_avec_X_repondants_ou_moins(h + 1) = True And _
              acceptation_petits_effectifs = True) Then
     
@@ -5481,8 +5336,6 @@ Public Sub automatisation_fiches_Eric()
                      '=======================================
                      ' Boucle sur chaque code valeur calculé
                      '=======================================
-                     
-                
                 
                  For i = 1 To num_der_col_Vc - 1 Step 1
                  
@@ -5527,36 +5380,16 @@ Public Sub automatisation_fiches_Eric()
                                                 "B2:AK261", _
                                                 chemin, _
                                                 intitule_modalite_champs & "_" & intitule_modalite_parcours)
-                 
-                 'On incrémente le nombre de fiches produites de 1
-                 'compteur_fiches_publies = compteur_fiches_publies + 1
-                 
-                 'On affiche le rapport dans le formulaire
-                 'Chargement.pourcentage.Value = CStr(compteur_fiches_publies) & " / " & CStr(compteur_a_publier)
-                 'DoEvents
-                 
-        'End If
+
+        End If
        
     Next h
-    
-    'Chargement.etape3.Font.Bold = True
-    'Chargement.etape3.ForeColor = RGB(0, 255, 0)
-    'DoEvents
     
     Application.ScreenUpdating = True
     Application.DisplayStatusBar = True
     
-    'Augmente la hauteur du formulaire pour laisser apparaître l'expression effectué
-    'Chargement.Height = 195.75
-    
-    'Instruction facultative, on prépare le fichier fichier pour une nouvelle réexécution
-    'Call initialise_les_plages_de_donnees
-    
     'On informe l'utilisateur que les fiches ont bien été produite
     MsgBox ("Les fiches ont été produites au format PDF avec succès.")
-    
-    'On ferme le formulaire
-    'Unload Chargement
        
     Set f_R = Nothing
     Set f_Ds = Nothing
@@ -6796,4 +6629,3 @@ Public Sub sauvegarder_xlsm(ByVal nom_dossier As String, _
         FileFormat:=xlOpenXMLWorkbookMacroEnabled, _
         CreateBackup:=False
 End Sub
-
