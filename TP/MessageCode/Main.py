@@ -27,7 +27,6 @@ def afficher_X_sequences_alphabet_randomise():
         print(liste_alphabet_new)
 
 # afficher_X_sequences_alphabet_randomise()
-
 liste_01 = ['U', 'L', 'T', 'I', 'Z', 'N', 'Y', 'J', 'B', 'F', 'O', 'A', 'K', 'W', 'M', 'G', 'Q', 'E', 'D', 'X', 'P', 'C', 'S', 'R', 'V', 'H']
 liste_02 = ['C', 'N', 'L', 'E', 'J', 'A', 'P', 'S', 'D', 'M', 'O', 'H', 'R', 'F', 'V', 'K', 'U', 'Q', 'Y', 'G', 'I', 'X', 'Z', 'B', 'W', 'T']
 liste_03 = ['N', 'Z', 'P', 'W', 'X', 'O', 'K', 'Y', 'T', 'M', 'L', 'G', 'E', 'F', 'D', 'C', 'A', 'R', 'B', 'I', 'U', 'V', 'S', 'J', 'H', 'Q']
@@ -38,6 +37,20 @@ liste_07 = ['E', 'H', 'V', 'M', 'O', 'Z', 'I', 'P', 'Y', 'Q', 'G', 'T', 'W', 'B'
 liste_08 = ['W', 'C', 'Y', 'K', 'F', 'B', 'H', 'G', 'S', 'V', 'P', 'E', 'J', 'D', 'T', 'M', 'X', 'L', 'Z', 'Q', 'O', 'I', 'N', 'A', 'R', 'U']
 liste_09 = ['Z', 'Q', 'O', 'J', 'P', 'R', 'N', 'L', 'D', 'I', 'B', 'F', 'Y', 'M', 'C', 'K', 'S', 'A', 'W', 'G', 'V', 'X', 'E', 'H', 'U', 'T']
 liste_10 = ['J', 'C', 'F', 'X', 'Q', 'W', 'R', 'V', 'O', 'B', 'H', 'T', 'A', 'I', 'S', 'N', 'K', 'D', 'U', 'L', 'E', 'G', 'Y', 'P', 'M', 'Z']
+
+dictionnaire_sequence = {}
+dictionnaire_sequence[1] = liste_01
+dictionnaire_sequence[2] = liste_02
+dictionnaire_sequence[3] = liste_03
+dictionnaire_sequence[4] = liste_04
+dictionnaire_sequence[5] = liste_05
+dictionnaire_sequence[6] = liste_06
+dictionnaire_sequence[7] = liste_07
+dictionnaire_sequence[8] = liste_08
+dictionnaire_sequence[9] = liste_09
+dictionnaire_sequence[10] = liste_10
+
+#print(dictionnaire_sequence)
 
 # Vérifier la présence d'un élément dans une liste
 print('u' in liste_01)
@@ -78,23 +91,46 @@ def chiffre(dictionnaire, valeur_num):
         car2 = math.floor((valeur_num - base*base * car1 ) / base) 
         car3 = valeur_num - (car1 * base * base) - (car2 * base)
         resultat = str(TrouverCle(dictionnaire, car1)) + str(TrouverCle(dictionnaire, car2)) + str(TrouverCle(dictionnaire, car3))
-        print(str(valeur_num) + ' : ' + resultat + ' --> ' + str(car1) + ' * ' + str(base*base) + ' + ' + str(car2) + ' * ' + str(base) + ' + ' + str(car3))
+        #print(str(valeur_num) + ' : ' + resultat + ' --> ' + str(car1) + ' * ' + str(base*base) + ' + ' + str(car2) + ' * ' + str(base) + ' + ' + str(car3))
+        return resultat
     else:
         car2 = math.floor((valeur_num) / base)
         car3 = (valeur_num) - ((base) * car2)
         resultat = TrouverCle(dictionnaire, 0) + str(TrouverCle(dictionnaire, car2)) + str(TrouverCle(dictionnaire, car3))
-        print(str(valeur_num) + ' : ' + resultat + ' --> ' + str(car2) + ' * ' + str(base) + ' + ' + str(car3))
-    return resultat
+        #print(str(valeur_num) + ' : ' + resultat + ' --> ' + str(car2) + ' * ' + str(base) + ' + ' + str(car3))
+        return resultat
 
 def Dechiffre(dictionnaire, valeur_chiffree):
     base = len(dictionnaire)
     return dictionnaire[str(valeur_chiffree)[0]]*base*base + dictionnaire[str(valeur_chiffree)[1]]*base + dictionnaire[str(valeur_chiffree)[2]]
 
-for i in range(47, 51):
-    #chiffre(dico_emplacement_message, i)
-    chiffre(dico_indice_sequence, i)
-    
-print(Dechiffre(dico_indice_sequence, 'XFA'))
-print(Dechiffre(dico_indice_sequence, 'XFF'))
-print(Dechiffre(dico_indice_sequence, 'KXX'))
-print(Dechiffre(dico_indice_sequence, 'KXK'))
+message_decode = 'EMMANUEL MACRON N EST QUE LE PION D UN SYSTEME LIBERAL QUI VEUT LA MORT DES PEUPLES'
+
+#print(list(message_decode))
+
+def chiffre_message(message):
+    dico_message_code = {}
+    iteration_message_code = 0
+    chaine_alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    message_code = ''
+    for caractere in list(message_decode):
+        if caractere in chaine_alphabet:
+            code = ''
+            num_sequence = random.randint(1,10)
+            num_sequence_iteration = 100 - (dictionnaire_sequence[num_sequence].index(caractere, 0, len(dictionnaire_sequence[num_sequence]))) * 3
+            code = code + chiffre(dico_emplacement_message, iteration_message_code)
+            if num_sequence < 10:
+                code = code + '0' + str(num_sequence)
+            else:
+                code = code + str(num_sequence)
+                
+            code = code + chiffre(dico_indice_sequence, num_sequence_iteration)
+            
+            dico_message_code[iteration_message_code] = code
+            
+        iteration_message_code = iteration_message_code + 1
+        message_code = message_code + code
+    print(message_code)
+
+
+chiffre_message(message_decode)
