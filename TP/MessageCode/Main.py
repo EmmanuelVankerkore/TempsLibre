@@ -8,25 +8,22 @@ Created on Mon Feb 13 13:51:38 2023
 import random
 import math
 
+chaine_alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+dico_message_code = {}
 x = 10 # Nombre de séquences
 
 # Fonction qui affiche 10 façon de randomisé les lettres de l'alphabet
 def afficher_X_sequences_alphabet_randomise():
     for i in range(x):
-            
         chaine_alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
         liste_alphabet =  list(chaine_alphabet.strip())
         liste_alphabet_new = []
-    
         while len(liste_alphabet) != 0:
-            
             indice_alea = random.randint(0,len(liste_alphabet)-1)
             liste_alphabet_new.append(liste_alphabet[indice_alea])
             del liste_alphabet[indice_alea]
-    
         print(liste_alphabet_new)
 
-# afficher_X_sequences_alphabet_randomise()
 liste_01 = ['U', 'L', 'T', 'I', 'Z', 'N', 'Y', 'J', 'B', 'F', 'O', 'A', 'K', 'W', 'M', 'G', 'Q', 'E', 'D', 'X', 'P', 'C', 'S', 'R', 'V', 'H']
 liste_02 = ['C', 'N', 'L', 'E', 'J', 'A', 'P', 'S', 'D', 'M', 'O', 'H', 'R', 'F', 'V', 'K', 'U', 'Q', 'Y', 'G', 'I', 'X', 'Z', 'B', 'W', 'T']
 liste_03 = ['N', 'Z', 'P', 'W', 'X', 'O', 'K', 'Y', 'T', 'M', 'L', 'G', 'E', 'F', 'D', 'C', 'A', 'R', 'B', 'I', 'U', 'V', 'S', 'J', 'H', 'Q']
@@ -49,19 +46,6 @@ dictionnaire_sequence[7] = liste_07
 dictionnaire_sequence[8] = liste_08
 dictionnaire_sequence[9] = liste_09
 dictionnaire_sequence[10] = liste_10
-
-#print(dictionnaire_sequence)
-
-# Vérifier la présence d'un élément dans une liste
-#print('u' in liste_01)
-#print('U' in liste_01)
-
-# Identifier l'index d'un élément dans une liste
-#print(liste_02.index('U', 0, len(liste_02)))
-#print(liste_02[liste_02.index('U', 0, len(liste_02))])
-
-# Sortir un chiffre compris entre 10 000 et 99 999
-#print(random.randint(10000,99999))
 
 dico_emplacement_message = {'*' : 0,
                             ':' : 1, 
@@ -87,17 +71,18 @@ def TrouverCle(dictionnaire, valeur):
 def chiffre(dictionnaire, valeur_num):
     base = len(dictionnaire)
     if valeur_num >= base*base:
+        
         car1 = math.floor(valeur_num / (base*base))
         car2 = math.floor((valeur_num - base*base * car1 ) / base) 
         car3 = valeur_num - (car1 * base * base) - (car2 * base)
         resultat = str(TrouverCle(dictionnaire, car1)) + str(TrouverCle(dictionnaire, car2)) + str(TrouverCle(dictionnaire, car3))
-        #print(str(valeur_num) + ' : ' + resultat + ' --> ' + str(car1) + ' * ' + str(base*base) + ' + ' + str(car2) + ' * ' + str(base) + ' + ' + str(car3))
         return resultat
+    
     else:
+        
         car2 = math.floor((valeur_num) / base)
         car3 = (valeur_num) - ((base) * car2)
         resultat = TrouverCle(dictionnaire, 0) + str(TrouverCle(dictionnaire, car2)) + str(TrouverCle(dictionnaire, car3))
-        #print(str(valeur_num) + ' : ' + resultat + ' --> ' + str(car2) + ' * ' + str(base) + ' + ' + str(car3))
         return resultat
 
 def dechiffre(dictionnaire, valeur_chiffree):
@@ -120,29 +105,46 @@ def concatener_valeurs(dictionnaire):
         resultat = resultat + value
     return resultat
 
+def renvoyer_sur_2_caracteres(nombre):
+    if nombre < 10:
+        return '0' + str(nombre)
+    else:
+        return str(nombre)
+    
+def renvoyer_code_partie3(lettre, num_sequence):
+    num_sequence_iteration = 100 - (dictionnaire_sequence[num_sequence].index(lettre, 0, len(dictionnaire_sequence[num_sequence]))) * 3
+    return chiffre(dico_indice_sequence, num_sequence_iteration)
+
+def renvoyer_code_partie2(num_sequence):
+    return renvoyer_sur_2_caracteres(num_sequence)
+
+def renvoyer_code_partie1(iteration):
+    return chiffre(dico_emplacement_message, iteration)
+
+def renvoyer_code(lettre, num_sequence, iteration):
+    return renvoyer_code_partie1(iteration) + renvoyer_code_partie2(num_sequence) + renvoyer_code_partie3(lettre, num_sequence)
+    
 def chiffre_message(message):
-    dico_message_code = {}
     iteration_message_code = 0
-    chaine_alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    message_code = ''
     for caractere in list(message_decode):
         if caractere in chaine_alphabet:
-            code = ''
             num_sequence = random.randint(1,10)
-            num_sequence_iteration = 100 - (dictionnaire_sequence[num_sequence].index(caractere, 0, len(dictionnaire_sequence[num_sequence]))) * 3
-            code = code + chiffre(dico_emplacement_message, iteration_message_code)
-            if num_sequence < 10:
-                code = code + '0' + str(num_sequence)
-            else:
-                code = code + str(num_sequence)
-                
-            code = code + chiffre(dico_indice_sequence, num_sequence_iteration)
-            
-            dico_message_code[iteration_message_code] = code
-            
+            dico_message_code[iteration_message_code] = renvoyer_code(caractere, num_sequence, iteration_message_code)
         iteration_message_code = iteration_message_code + 1
-        message_code = message_code + code
     print(concatener_valeurs(dispose_aleatoirement(dico_message_code)))
 
 
 chiffre_message(message_decode)
+
+def decompose_message_en_batch(message):
+    liste_batch = []
+    while len(message) != 0 :
+        message_batch = message[0:8]
+        liste_batch.append(message_batch)
+        message = message[8:]
+    print(liste_batch)
+
+decompose_message_en_batch('*!,09XLF*.,01XLB:::09XLF:*$06KFF*+.01KXB*$%09KXB')
+
+def dechiffre_message(message):
+    return 0  
