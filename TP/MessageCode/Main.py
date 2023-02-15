@@ -53,15 +53,15 @@ dictionnaire_sequence[10] = liste_10
 #print(dictionnaire_sequence)
 
 # Vérifier la présence d'un élément dans une liste
-print('u' in liste_01)
-print('U' in liste_01)
+#print('u' in liste_01)
+#print('U' in liste_01)
 
 # Identifier l'index d'un élément dans une liste
-print(liste_02.index('U', 0, len(liste_02)))
-print(liste_02[liste_02.index('U', 0, len(liste_02))])
+#print(liste_02.index('U', 0, len(liste_02)))
+#print(liste_02[liste_02.index('U', 0, len(liste_02))])
 
 # Sortir un chiffre compris entre 10 000 et 99 999
-print(random.randint(10000,99999))
+#print(random.randint(10000,99999))
 
 dico_emplacement_message = {'*' : 0,
                             ':' : 1, 
@@ -100,13 +100,19 @@ def chiffre(dictionnaire, valeur_num):
         #print(str(valeur_num) + ' : ' + resultat + ' --> ' + str(car2) + ' * ' + str(base) + ' + ' + str(car3))
         return resultat
 
-def Dechiffre(dictionnaire, valeur_chiffree):
+def dechiffre(dictionnaire, valeur_chiffree):
     base = len(dictionnaire)
     return dictionnaire[str(valeur_chiffree)[0]]*base*base + dictionnaire[str(valeur_chiffree)[1]]*base + dictionnaire[str(valeur_chiffree)[2]]
 
 message_decode = 'EMMANUEL MACRON N EST QUE LE PION D UN SYSTEME LIBERAL QUI VEUT LA MORT DES PEUPLES'
 
-#print(list(message_decode))
+def dispose_aleatoirement(dictionnaire):
+    nouveau_dictionnaire = {}
+    liste_cle_aleatoire = random.sample(list(dictionnaire.keys()), len(list(dictionnaire.keys())))
+    for cle_alea in liste_cle_aleatoire:
+        nouveau_dictionnaire[cle_alea] = dictionnaire[cle_alea]
+        del dictionnaire[cle_alea]
+    return nouveau_dictionnaire
 
 def chiffre_message(message):
     dico_message_code = {}
@@ -130,7 +136,7 @@ def chiffre_message(message):
             
         iteration_message_code = iteration_message_code + 1
         message_code = message_code + code
-    print(message_code)
+    print(dispose_aleatoirement(dico_message_code))
 
 
 chiffre_message(message_decode)
