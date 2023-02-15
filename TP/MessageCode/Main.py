@@ -71,15 +71,12 @@ def TrouverCle(dictionnaire, valeur):
 def chiffre(dictionnaire, valeur_num):
     base = len(dictionnaire)
     if valeur_num >= base*base:
-        
         car1 = math.floor(valeur_num / (base*base))
         car2 = math.floor((valeur_num - base*base * car1 ) / base) 
         car3 = valeur_num - (car1 * base * base) - (car2 * base)
         resultat = str(TrouverCle(dictionnaire, car1)) + str(TrouverCle(dictionnaire, car2)) + str(TrouverCle(dictionnaire, car3))
         return resultat
-    
     else:
-        
         car2 = math.floor((valeur_num) / base)
         car3 = (valeur_num) - ((base) * car2)
         resultat = TrouverCle(dictionnaire, 0) + str(TrouverCle(dictionnaire, car2)) + str(TrouverCle(dictionnaire, car3))
@@ -88,8 +85,6 @@ def chiffre(dictionnaire, valeur_num):
 def dechiffre(dictionnaire, valeur_chiffree):
     base = len(dictionnaire)
     return dictionnaire[str(valeur_chiffree)[0]]*base*base + dictionnaire[str(valeur_chiffree)[1]]*base + dictionnaire[str(valeur_chiffree)[2]]
-
-message_decode = 'EMMANUEL MACRON N EST QUE LE PION D UN SYSTEME LIBERAL QUI VEUT LA MORT DES PEUPLES'
 
 def dispose_aleatoirement(dictionnaire):
     nouveau_dictionnaire = {}
@@ -124,17 +119,17 @@ def renvoyer_code_partie1(iteration):
 def renvoyer_code(lettre, num_sequence, iteration):
     return renvoyer_code_partie1(iteration) + renvoyer_code_partie2(num_sequence) + renvoyer_code_partie3(lettre, num_sequence)
     
-def chiffre_message(message):
+def renvoyer_message_code(message):
     iteration_message_code = 0
-    for caractere in list(message_decode):
+    for caractere in list(message):
         if caractere in chaine_alphabet:
             num_sequence = random.randint(1,10)
             dico_message_code[iteration_message_code] = renvoyer_code(caractere, num_sequence, iteration_message_code)
         iteration_message_code = iteration_message_code + 1
-    print(concatener_valeurs(dispose_aleatoirement(dico_message_code)))
-
-
-chiffre_message(message_decode)
+    return concatener_valeurs(dispose_aleatoirement(dico_message_code))
+    
+def afficher_message_code(message):
+    print(renvoyer_message_code(message))
 
 def decompose_message_en_batch(message):
     liste_batch = []
@@ -142,9 +137,37 @@ def decompose_message_en_batch(message):
         message_batch = message[0:8]
         liste_batch.append(message_batch)
         message = message[8:]
-    print(liste_batch)
+    return liste_batch
 
-decompose_message_en_batch('*!,09XLF*.,01XLB:::09XLF:*$06KFF*+.01KXB*$%09KXB')
+def constituer_message_explose(message):
+    dico_message_dechiffre = {}
+    liste_lettre_codee = decompose_message_en_batch(message)
+    for code in liste_lettre_codee:
+        dico_message_dechiffre[dechiffre(dico_emplacement_message,code[0:3])] = dictionnaire_sequence[int(code[3:5])][math.floor(int(100 - dechiffre(dico_indice_sequence, code[5:8]))/3)]
+    return dico_message_dechiffre 
 
-def dechiffre_message(message):
-    return 0  
+def trouver_valeur_cle_maximal(dictionnaire):
+    valeur_max = 0
+    for cle in list(dictionnaire.keys()):
+        if cle > valeur_max:
+            valeur_max = cle
+    return valeur_max
+
+def reconstituer_message(dictionnaire_message_explose):
+    message = ''
+    liste_keys = list(dictionnaire_message_explose.keys())
+    for i in range(0, trouver_valeur_cle_maximal(dictionnaire_message_explose)+1):
+        if i in liste_keys:
+            message = message + dictionnaire_message_explose[i]
+        else:
+            message = message + ' '
+    return message
+
+def dechiffrer_message_decode(message_code):
+    return reconstituer_message(constituer_message_explose(message_code))
+
+def afficher_message_decode(message_code):
+    print(dechiffrer_message_decode(message_code))
+    
+#afficher_message_code('LE LION EST MORT CE SOIR')
+afficher_message_decode('**,05KXB*:$02KBB*:!06KFF**$05KAL**:06KLA***10XFK*::07KXF*+%01XLB*:*03KVK*+.01KFX*++04XLB*+!05XLB*+$01XLF*:%01KFB*+:03KXF**.01KAK**!05XLB*:.05XLF*:+09XBL')
