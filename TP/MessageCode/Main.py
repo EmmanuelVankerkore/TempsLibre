@@ -114,6 +114,12 @@ def dispose_aleatoirement(dictionnaire):
         del dictionnaire[cle_alea]
     return nouveau_dictionnaire
 
+def concatener_valeurs(dictionnaire):
+    resultat = ''
+    for value in list(dictionnaire.values()):
+        resultat = resultat + value
+    return resultat
+
 def chiffre_message(message):
     dico_message_code = {}
     iteration_message_code = 0
@@ -136,7 +142,7 @@ def chiffre_message(message):
             
         iteration_message_code = iteration_message_code + 1
         message_code = message_code + code
-    print(dispose_aleatoirement(dico_message_code))
+    print(concatener_valeurs(dispose_aleatoirement(dico_message_code)))
 
 
 chiffre_message(message_decode)
