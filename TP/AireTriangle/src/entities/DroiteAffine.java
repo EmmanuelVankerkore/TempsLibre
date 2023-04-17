@@ -79,7 +79,7 @@ public class DroiteAffine {
 	}
 
 	/**
-	 * La méthode affichera toutes les informations assoiciées à l'objet.
+	 * La méthode affichera toutes les informations associées à l'objet.
 	 */
 	
 	public void afficher() {
@@ -95,6 +95,7 @@ public class DroiteAffine {
 	 * 
 	 * @param point : un point (classe : Point2D)
 	 * @return une droite (classe : DroiteAffine)
+	 * 
 	 */
 	
 	public DroiteAffine getDroiteAffinePerpendiculaireFromPoint(Point2D point) {
