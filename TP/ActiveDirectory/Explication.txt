@@ -1,0 +1,15 @@
+C'est les collégiales, le moment où les managers discutent de leur managés.
+Chaque manager dispose de 4 managés maximum.
+L'organisation est composé de 120 agents.
+Le temps consacré pour chaque managé est de 5 minutes (en moyenne).
+Chaque réunion ne doit pas excéder plus d'une heure.
+Les 10 associés n'ont pas de manager.
+Pas plus d'une réunion par jour ouvré
+Organiser l'envoi des emails qui tiendront compte des éléments suivants:
+	- la date de la réunion
+	- le temps estimé de la réunion
+	- le nombre de managé
+	- la liste des identités des managés
+	- la liste des destinataires
+
+Développer des métrics afin d'évaluer la meilleur combinaison

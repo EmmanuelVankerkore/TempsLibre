@@ -107,3 +107,7 @@
 # 4. Insérer un header pour mettre un peu de CSS
 
 # 5. Afficher une image depuis le local
+
+![image info](./<dossier_1>/<dossier_2>/<nom_fichier_image>.JPG)
+
+Le point "." désigne le chemin relative où est stocké le fichier actuel.
