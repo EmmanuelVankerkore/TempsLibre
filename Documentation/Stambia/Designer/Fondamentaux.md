@@ -1,10 +1,21 @@
 <head>
 <style>
 #boiteimagetexte {display:flex; align-items: flex-start}
+#titleMain {color:#808080; font-size:40px; font-weight:bold; font-family:"Cambria"}
+#titleSub {color:#677179; font-size:30px; font-weight:bold; font-family: "Verdana"; margin-top:30px; margin-bottom:25px}
+#titleSub2 {color:#563C5C; font-size:20px; font-weight:bold; margin-bottom:20px}
+#titleSubSub {}
+#com {color:#FF00FF; font-size:18px "Carnivalee Freakshow"}
+#par {color:#32CD32; font-size:18px "Carnivalee Freakshow"}
+#val {color:#87CEFA; font-size:18px "Carnivalee Freakshow"}
+#imp {color:#e21313; font:bold 20px "Carnivalee Freakshow"}
+#def {color:#90EE90; font-size:18px "Carnivalee Freakshow"}
+#not {color:#1E90FF; font-size:18px "Carnivalee Freakshow"}
+#att {color:#ffa500; font-size:18px "Carnivalee Freakshow"}
 </style>
 </head>
 
-# Tuto sur les fondamentaux Stambia
+# <span id="titleMain">Tuto sur les fondamentaux Stambia</span>
 
 - [Tuto sur les fondamentaux Stambia](#tuto-sur-les-fondamentaux-stambia)
   - [1. Création de métadatas](#1-création-de-métadatas)
@@ -80,11 +91,9 @@
   - [47. Réaliser un Direct Bind](#47-réaliser-un-direct-bind)
   - [48. Zipper un fichier](#48-zipper-un-fichier)
 
-## 1. Création de métadatas
-<br>
+## <div id="titleSub">1. Création de métadatas</div>
 
-## 1.1 CSV
-<br>
+## <div id="titleSub2">1.1 CSV</div> 
 
 étape 1: Créer une nouvelle métadata
 
@@ -96,34 +105,28 @@
 
 étape 3: Se laisser guider par l'assistant et enregistrer
 
-## 1.2 XML
-<br>
+## <div id="titleSub2">1.2 XML</div> 
 
-## 1.3 Web Service
-<br>
+## <div id="titleSub2">1.3 Web Service</div> 
 
 étape 1: Créer une metadata avec le type suivant:
 
 ![image info](./SourcesImages/WebService_typeMetadata.JPG)
 
-
-## 2. Selectionner l'affichage des champs d'une table
-<br>
+## <div id="titleSub">2. Selectionner l'affichage des champs d'une table</div>
 
 Sélectionner la table et cliquer ici (voir ci-dessous)
 
 ![image info](./SourcesImages/SelectionChampsAffichage_01.JPG)
 
-## 3. Réaliser un mapping simple
-<br>
+## <div id="titleSub">3. Réaliser un mapping simple</div>
 
 À gauche le mapping (in) et à droite la table à mapper (out)
 
 étape 1: Faites un glisser déposer du champ in vers le champ out<br>
 étape 2: Sélectionner "Map"
 
-## 3.1 Définir le type de mapping en sortie
-<br>
+## <div id="titleSub2">3.1 Définir le type de mapping en sortie</div>
 
 étape 1: sélectionner le champ du in<br>
 étape 2: sélectionner le champ du out<br>
@@ -131,8 +134,7 @@ Sélectionner la table et cliquer ici (voir ci-dessous)
 
 ![image info](./SourcesImages/DéfinirTypeMapping_01.JPG)
 
-## 3.2 Lancer l'exécution d'un mapping
-<br>
+## <div id="titleSub2">3.2 Lancer l'exécution d'un mapping</div>
 
 Depuis l'éditeur de Designer
 
@@ -140,8 +142,7 @@ Depuis l'éditeur de Designer
 
 ![image info](./SourcesImages/LancerExecutionMapping_01.JPG)
 
-## 3.3 Modifier la règle métier du mapping
-<br>
+## <div id="titleSub2">3.3 Modifier la règle métier du mapping</div>
 
 Depuis l'éditeur de Designer
 
@@ -151,8 +152,7 @@ Depuis l'éditeur de Designer
 
 ![image info](./SourcesImages/ModifierDefinitionMetierMapping_01.JPG)
 
-## 3.4 Modifier la jointure entre deux tables
-<br>
+## <div id="titleSub2">3.4 Modifier la jointure entre deux tables</div>
 
 Depuis l'éditeur de Designer
 
@@ -161,8 +161,7 @@ Depuis l'éditeur de Designer
 
 ![image info](./SourcesImages/ModifierTypeJointure_01.JPG)
 
-## 3.5 Dédoublonnage des valeurs lors d'un mapping
-<br>
+## <div id="titleSub2">3.5 Dédoublonnage des valeurs lors d'un mapping</div>
 
 Depuis l'éditeur de Designer
 
@@ -174,8 +173,7 @@ Depuis l'éditeur de Designer
 
 ![image info](./SourcesImages/DédoubonnageDesValeurs_02.JPG)
 
-## 4. Réaliser un filtre sur le champ d'une table
-<br>
+## <div id="titleSub">4. Réaliser un filtre sur le champ d'une table</div>
 
 Depuis l'éditeur de Designer
 
@@ -184,16 +182,14 @@ Depuis l'éditeur de Designer
 
 ![image info](./SourcesImages/FiltreSurLeChampDeTable_01.JPG)
 
-## 4.1 Modifier la règle d'un filtre
-<br>
+## <div id="titleSub2">4.1 Modifier la règle d'un filtre</div>
 
 étape 1: sélectionner le filtre<br>
 étape 2: réaliser la modification prévue à cet effet (voir ci-dessous)
 
 ![image info](./SourcesImages/ModifierLaRegleDuFiltre.JPG)
 
-## 5. Créer un stage
-<br>
+## <div id="titleSub">5. Créer un stage</div>
 
 Depuis l'éditeur "Project Explorer"
 
@@ -205,16 +201,14 @@ alternative
 étape 1: sélectionner un schéma<br>
 étape 2: drag and drop sur le lien entre le in et le out
 
-## 5.1 Ajouter un champ dans le stage
-<br>
+## <div id="titleSub">5.1 Ajouter un champ dans le stage</div>
 
 étape 1: sélectionner le stage<br>
 étape 2: cliquer sur l'item (voir ci-dessous)
 
 ![image info](./SourcesImages/AjouterChampStage_01.JPG)
 
-## 5.2 Définir l'expression d'un champ d'un stage
-<br>
+## <div id="titleSub2">5.2 Définir l'expression d'un champ d'un stage</div>
 
 Depuis l'éditeur de Designer
 
@@ -223,11 +217,9 @@ Depuis l'éditeur de Designer
 
 ![image info](./SourcesImages/ModifierExpressionChampStage_01.JPG)
 
-## 6. Se familiariser avec l'interface
-<br>
+## <div id="titleSub">6. Se familiariser avec l'interface</div>
 
-## 6.1 Identifier l'item dans "Project Explorer" à partir du Designer
-<br>
+## <div id="titleSub2">6.1 Identifier l'item dans "Project Explorer" à partir du Designer</div>
 
 De façon automatique
 
@@ -242,8 +234,7 @@ De façon manuelle
 
 ![image info](./SourcesImages/IdentifierAutoSurProjectExplorer_02.JPG)
 
-## 6.2 Réarranger les entités d'un mapping ou d'un process
-<br>
+## <div id="titleSub2">6.2 Réarranger les entités d'un mapping ou d'un process</div>
 
 Depuis la tool bar principale (celle du haut)
 
@@ -251,8 +242,7 @@ Depuis la tool bar principale (celle du haut)
 
 ![image info](./SourcesImages/RéorganiserItemMappingProcess_01.JPG)
 
-## 7. À savoir / Très important
-<br>
+## <div id="titleSub">7. À savoir / Très important</div>
 
 <p style="color:#1E90FF";>Lorsque l'on réalise des modifications sur une base de données, elles ne sont visible que depuis la session. Pour les rendre visible à tous
 il faut réaliser un "commit;" dans une fenêtre d'exécution SQL<p>
@@ -261,8 +251,7 @@ l'exécution de la commande truncate, donc son exécution a un impact direct pou
 les utilisateurs de la données modifiées (trucatée)</p>
 <p style="color:#00FF00";>Heureusement, il existe la requête SQL "roll back;" qui permet d'annuler l'ensemble des manipulation réalisées avant le dernier commit.</p>
 
-## 8. Les items/logos à connaître par coeur
-<br>
+## <div id="titleSub">8. Les items/logos à connaître par coeur</div>
 
 Dans 001_Metadata/000_Server, on peut retrouver l'arborescence suivante:<br><br>
 
@@ -323,16 +312,14 @@ Lorsque l'on créé un Web service: on a les éléments suivant qui le constitue
 <span STYLE="padding:0 0 0 140px;"> ![image info](./SourcesImages/ListeElementsXML.JPG) --> Liste d'éléments (XML) </span><br>
 <span STYLE="padding:0 0 0 140px;"> ![image info](./SourcesImages/ListeElementsJSON.JPG) --> Liste d'éléments (JSON) </span><br>
 
-## 9. Avant l'exécution du process
-<br>
+## <div id="titleSub">9. Avant l'exécution du process</div>
 
 Avant de lancer l'exécution d'un mapping ou d'un process, il faut s'assurer d'être connecté à un runtime.<br>
 En général, les runtimes sont déjà là prêts à être utilisés. (voir ci-dessous)
 
 ![image info](./SourcesImages/SelectionRuntime_01.JPG)
 
-## 10. En cas d'echec durant l'exécution d'un process
-<br>
+## <div id="titleSub">10. En cas d'echec durant l'exécution d'un process</div>
 
 Lorsque vous lancez l'exécution d'un process ou d'un mapping, un nouvel onglet apparaît (voir ci-contre)
 
@@ -356,15 +343,13 @@ Vous remarquerez qu'un historique s'est formé en dessous de l'onglet, un "doubl
 
 ![image info](./SourcesImages/EnCasDerreur_05.JPG)
 
-## 11. Composants de la palette
-<br>
+## <div id="titleSub">11. Composants de la palette</div>
 
 Depuis le designer associé aux process vous avez accès à la palette contenant des composants regroupés en différentes sections (voir ci-dessous)
 
 ![image info](./SourcesImages/Palette.JPG)
 
-## 11.1 Les liens
-<br>
+## <div id="titleSub2">11.1 Les liens</div>
 
 Dans la section "Link"
 
@@ -372,8 +357,7 @@ Pour ordonnancer les différents sous-process entre eux.
 
 ![image info](./SourcesImages/PaletteLink_01.JPG)
 
-## 11.2 Les process neutres
-<br>
+## <div id="titleSub2">11.2 Les process neutres</div>
 
 Dans la section "Miscellaneous"
 
@@ -381,8 +365,7 @@ Lorsque l'on a des traitements paralléles asynchrone, on peut temporiser avec l
 
 ![image info](./SourcesImages/PaletteSectionMiscellaneous_01.JPG)
 
-## 11.3 Les requêtes SQL
-<br>
+## <div id="titleSub2">11.3 Les requêtes SQL</div>
 
 Dans la section "SQL"
 
@@ -390,31 +373,27 @@ Lorsque l'on souhaite exécuté des requêtes SQL on utilisera l'item "SQL Opera
 
 ![image info](./SourcesImages/PaletteSectionSQL_01.JPG)
 
-## 12. Après l'exécution du process
-<br>
+## <div id="titleSub">12. Après l'exécution du process</div>
 
-## 12.1 Mettre à jour son workspace
-<br>
+## <div id="titleSub2">12.1 Mettre à jour son workspace</div>
 
 Faire un clique droit sur un dossier raçine, passer la sourie sur 'Team' et sélectionner 'Update to Head', (voir ci-dessous).
 
 ![image info](./SourcesImages/UpdateToHead.JPG)
 
-## 12.2 Pousser son travail vers le SVN
+## <div id="titleSub2">12.2 Pousser son travail vers le SVN</div>
 
 Faire un clique droit sur un dossier raçine, passer la sourie sur 'Team' et sélectionner 'Commit', (voir ci-dessous).
 
 ![image info](./SourcesImages/Commit.JPG)
 
-## 12.3 Revenir à la dernière version du SVN
-<br/>
+## <div id="titleSub2">12.3 Revenir à la dernière version du SVN</div>
 
 Faire un clique droit sur un dossier raçine, passer la sourie sur 'Team' et sélectionner 'Revert', (voir ci-dessous).
 
 ![image info](./SourcesImages/Revert.JPG)
 
-## 13. Gestion des conflits
-<br>
+## <div id="titleSub">13. Gestion des conflits</div>
 
 étape 1: Identifier l'élément le plus fin qui est en conflit
 
@@ -422,8 +401,7 @@ Faire un clique droit sur un dossier raçine, passer la sourie sur 'Team' et sé
 
 ![image info](./SourcesImages/ConflitTextEditor.JPG)
 
-## 14. Atteindre un mapping depuis un process
-<br/>
+## <div id="titleSub">14. Atteindre un mapping depuis un process</div>
 
 Depuis l'éditeur de Designer du process
 
@@ -431,8 +409,7 @@ Depuis l'éditeur de Designer du process
 
 ![image info](./SourcesImages/AccèderAuMapping.JPG)
 
-## 15. Identifier le qui utilise quoi
-<br/>
+## <div id="titleSub">15. Identifier le qui utilise quoi</div>
 
 Depuis le Project Explorer
 
@@ -453,11 +430,9 @@ Il y aura la section "container" pour retrouver où et dans quoi est contenu l'�
 
 ![image info](./SourcesImages/IdentifierImpact3.JPG)
 
-## 16. SQL to parameter
-<br/>
+## <div id="titleSub">16. SQL to parameter</div>
 
-## 16.1 Définition en début de process
-<br/>
+## <div id="titleSub2">16.1 Définition en début de process</div>
 
 Depuis l'éditeur du design du process
 
@@ -485,8 +460,7 @@ Depuis l'éditeur du design du process
 
 ![image info](./SourcesImages/SchemaDansSqlToParameter.JPG)
 
-## 16.2 Utilisation dans un mapping
-<br/>
+## <div id="titleSub2">16.2 Utilisation dans un mapping</div>
 
 Depuis l'éditeur du mapping
 
@@ -502,8 +476,7 @@ Si le paramètre est de type (alphanumérique)
 
 ![image info](./SourcesImages/UtilisationSqlToParameterDansMapping2.JPG)
 
-## 17 Afficher la date et l'heure actuelle
-<br/>
+## <div id="titleSub">17 Afficher la date et l'heure actuelle</div>
 
 Depuis l'éditeur du mapping
 
@@ -515,8 +488,7 @@ Dans le champ "Physical Name"
 
 ![image info](./SourcesImages/DateEtHeureActuelleNomFichier.JPG)
 
-## 18 Ajouter un repository dans son workspace depuis le SVN
-<br/>
+## <div id="titleSub">18 Ajouter un repository dans son workspace depuis le SVN</div>
 
 étape 1: Cliquer sur le bouton en haut à droite "SVN Repository Exploring"
 
@@ -534,11 +506,9 @@ Dans le champ "Physical Name"
 
 ![image info](./SourcesImages/AdresseSVN.JPG)
 
-## 19 Récupèrer la version du runtime
-<br/>
+## <div id="titleSub">19 Récupèrer la version du runtime</div>
 
-## 19.1 Depuis Analytics
-<br/>
+## <div id="titleSub2">19.1 Depuis Analytics</div>
 
 étape 1: Sélectionner la bonne vue
 
@@ -564,8 +534,7 @@ Dans le champ "Physical Name"
 
 ![image info](./SourcesImages/ResultatVersionRuntimes.JPG)
 
-## 20. Redéfinir les liens entre les différentes entitées du workspace
-<br>
+## <div id="titleSub">20. Redéfinir les liens entre les différentes entitées du workspace</div>
 
 étape 1: Se rendre dans l'onglet "Impact"
 
@@ -579,9 +548,9 @@ Dans le champ "Physical Name"
 
 ![image info](./SourcesImages/RebuildCache.JPG)
 
-## 21. Web Service, utilisation de la méthode (verb) GET
+## <div id="titleSub">21. Web Service, utilisation de la méthode (verb) GET</div>
 
-## 21.1 Exemple 1 : 1 query parameter
+## <div id="titleSub2">21.1 Exemple 1 : 1 query parameter</div>
 
 Depuis le designer, côté opération
 
@@ -599,8 +568,7 @@ Avec le reverse, côté opération
 
 ![image info](./SourcesImages/WebService_Reverse_Operation_Get_1QP.JPG)
 
-## 22. Mise en recette depuis designer sur le serveur de dev
-<br>
+## <div id="titleSub">22. Mise en recette depuis designer sur le serveur de dev</div>
 
 étape 1 : Se connecter au runtime de dev
 
@@ -610,13 +578,11 @@ Avec le reverse, côté opération
 
 étape 4 : Sélectionner Publish
 
-## 23. Mise en recette depuis Analytics
-<br>
+## <div id="titleSub">23. Mise en recette depuis Analytics</div>
 
 Ouvrir la documentation dédié à Stambia Analytics
 
-## 24. Utilisation du XML en In et en Out dans un mapping 
-<br>
+## <div id="titleSub">24. Utilisation du XML en In et en Out dans un mapping</div>
 
 Dans le cadre d'un appel à un web service
 
@@ -637,8 +603,7 @@ Dans l'onglet "Properties" indiquer un nom de fichier XML pour le champ "In File
 ![image info](./SourcesImages/XMLofOUT.JPG)
 
 
-## 25. Réaliser une condition en fonction de la valeur d'une variable (System) de Stambia
-<br>
+## <div id="titleSub">25. Réaliser une condition en fonction de la valeur d'une variable (System) de Stambia</div>
 
 Cliquer sur le lien
 
@@ -651,8 +616,7 @@ Exemple de conditions en utilisant les variables du composant source
 1 : C'est le nom donné au composant source (à partir du lien)<br>
 2 : C'est le nom de la variable généré après exécution du composant source 
 
-## 26. Rendre obligatoire l'exécution d'un sous process avant de passer à la suite
-<br>
+## <div id="titleSub">26. Rendre obligatoire l'exécution d'un sous process avant de passer à la suite</div>
 
 Cliquer sur le lien
 
@@ -662,8 +626,7 @@ Changer la valeur de Triggering Behavior
 
 ![image info](./SourcesImages/RendreobligatoireExecutionSousProcess.JPG)
 
-## 27. Faire appel à une variable 
-<br>
+## <div id="titleSub">27. Faire appel à une variable</div>
 
 Depuis la fenêtre "Project Explorer"
 
@@ -678,8 +641,7 @@ Depuis la fenêtre "Project Explorer"
 ![image info](./SourcesImages/UtilisationVariableDansMapping.JPG)
 
 
-## 28. Attendre l'apparition d'un fichier 
-<br>
+## <div id="titleSub">28. Attendre l'apparition d'un fichier</div>
 
 Ouvrir la palete
 
@@ -687,12 +649,9 @@ Se rendre dans la rubrique "File"
 
 Choisir l'item "Wait for files" et le drag and drop dans le designer
 
-
 ![image info](./SourcesImages/ExempleMoveFile.JPG)
 
-
-## 29. Déplacer un ou des fichiers vers un autre dossier
-<br>
+## <div id="titleSub">29. Déplacer un ou des fichiers vers un autre dossier</div>
 
 Ouvrir la palete
 
@@ -704,8 +663,7 @@ exemple:
 
 ![image info](./SourcesImages/ExempleWaitFile.JPG)
 
-## 30. Réduire totalement l'arborescence de l'onglet Project Explorer
-<br>
+## <div id="titleSub">30. Réduire totalement l'arborescence de l'onglet Project Explorer</div>
 
 Se rendre dans l'onglet "Project Explorer"
 
@@ -715,8 +673,7 @@ Cliquer sur le bouton suivant:
 
 (ou utiliser le raccourci Ctrl+Shift+/)
 
-## 31. Supprimer les champs qui n'existent plus en base lors d'un reverse
-<br>
+## <div id="titleSub">31. Supprimer les champs qui n'existent plus en base lors d'un reverse</div>
 
 Se rendre dans les propriétés d'un schéma/utilisateur
 
@@ -724,8 +681,7 @@ Cliquer sur la case à cocher "Delete No Longer Existing Column":
 
 ![image info](./SourcesImages/SupprimerChampsInexistantEnBaseDurantReverse.JPG)
 
-## 32. Réaliser une comparaison entre un élément de votre workspace et le même élement du SVN
-<br>
+## <div id="titleSub">32. Réaliser une comparaison entre un élément de votre workspace et le même élement du SVN</div>
 
 Se rendre dans l'onglet "Project Explorer"
 
@@ -741,8 +697,7 @@ Sélectionner "Base révision"
 
 C'est à vous de jouer, une nouvelle fenêtre est apparue séparé en deux: la partie de gauche est votre workspace et la partie de droite est votre SVN.
 
-## 33. Ajouter un champ qui indique la valeur du rang pour un élément par rapport à son noeud père dans un fichier XML
-<br>
+## <div id="titleSub">33. Ajouter un champ qui indique la valeur du rang pour un élément par rapport à son noeud père dans un fichier XML</div>
 
 Assurez-vous que votre élément soit contenu dans une séquence
 
@@ -758,8 +713,7 @@ Dans les propriétés, entrer un nom pour "Name" et choisisser "nodeLocalPositio
 
 PropertyDuRangElementFichierXML
 
-## 34. Utiliser la valeur d'une variable native d'un composant après son exécution
-<br>
+## <div id="titleSub">34. Utiliser la valeur d'une variable native d'un composant après son exécution</div>
 
 exemple:
 ```
@@ -772,15 +726,13 @@ sumVariable : correspond à l'onglet contenant toutes les variables (system et c
 
 "010_MDW_OCT_Exp_Article" : nom du composant (mapping en l'occurence) sur lequel on va récupérer la valeur de la variable
 
-## 35. Lancer l'exécution d'une ligne de commande
-<br>
+## <div id="titleSub">35. Lancer une commande via l'invite de commande</div>
 
 étape 1 : Dans la palette, ouvrir la section "Miscellaneous"
 
 ![image info](./SourcesImages/OperatingSystemCommand.JPG)
 
-## 35. Utiliser les paramètres d'une metadata
-<br>
+## <div id="titleSub2">35.1 Utiliser les paramètres d'une metadata</div>
 
 Considérons l'object "MAPS" comme une metadata permetant la connexion à un SFTP.
 
@@ -810,8 +762,7 @@ MAPS : Le nom de la metadata que l'on a drag en drop dans le composant
 
 host : le nom de la variable présent dans la liste des variables constituant Global XPath de la metadata.
 
-## 36. Copier et coller un composant
-<br>
+## <div id="titleSub">36. Copier et coller un composant</div>
 
 étape 1 : Clique gauche sur le composant
 
@@ -825,8 +776,7 @@ host : le nom de la variable présent dans la liste des variables constituant Gl
 
 étape 5 :  Clique gauche sur "Paste"
 
-## 37. Réaliser un union dans un mapping
-<br>
+## <div id="titleSub">37. Réaliser un union dans un mapping</div>
 
 étape 1 : Faite en sorte qu'il y ait un stage entre la ou les tables en entrée et la table en sortie
 
@@ -844,8 +794,7 @@ host : le nom de la variable présent dans la liste des variables constituant Gl
 
 ![image info](./SourcesImages/StageExpressionEditorFormuleUnion.JPG)
 
-## 38. Analyse des symboles lors d'une recherche d'impact
-<br>
+## <div id="titleSub">38. Analyse des symboles lors d'une recherche d'impact</div>
 
 Lorsque l'on recherche les impacts d'une table par exemple :
 
@@ -869,8 +818,7 @@ Lorsque la table est utilisé en entrée dans un mapping
 
 Lorsque la table est utilisé en sortie dans un mapping
 
-## 39. Attention à la méthode d'intégration durant un stage
-<br>
+## <div id="titleSub">39. Attention à la méthode d'intégration durant un stage</div>
 
 étape 1 : Lorsque vous ajoutez un stage via un drag and drop du schéma de la table cible, vous obtenez ceci
 
@@ -884,13 +832,11 @@ Lorsque la table est utilisé en sortie dans un mapping
 
 ![image info](./SourcesImages/MethodeIntegrationAfterStageCorrecte.JPG)
 
-## 40. Obligation dans le SQL to parameter
-<br>
+## <div id="titleSub">40. Obligation dans le SQL to parameter</div>
 
 Note : Même si l'on définit un paramètre via une requête SQL qui n'a pas besoin de table, comme avec dual, il faut tout de même insérer un schéma de base de données dans le composant SQL to parameter.
 
-## 41. Consulter rapidement la nature d'un champ depuis un mapping
-<br>
+## <div id="titleSub">41. Consulter rapidement la nature d'un champ depuis un mapping</div>
 
 étape 1 : Sélectionner avec un clique gauche le champ d'une table
 
@@ -906,8 +852,7 @@ Note : Même si l'on définit un paramètre via une requête SQL qui n'a pas bes
 
 ![image info](./SourcesImages/TableChampStructureInfos.JPG)
 
-## 42. Prioriser l'ordre d'exécution des jointures dans un mapping
-<br>
+## <div id="titleSub">42. Prioriser l'ordre d'exécution des jointures dans un mapping</div>
 
 étape 1 : Sélection une jointure 
 
@@ -923,8 +868,7 @@ Note : Même si l'on définit un paramètre via une requête SQL qui n'a pas bes
 
 ![image info](./SourcesImages/JointurePropertiesAdvancedOrdre.JPG)
 
-## 43. Rechercher rapidement un process déjà exécuté
-<br>
+## <div id="titleSub">43. Rechercher rapidement un process déjà exécuté</div>
 
 Un exemple, vous recherchez la dernière exécution du process "GNX_MDW_Int_F01_Article_Quable_ora"
 
@@ -936,8 +880,7 @@ Un exemple, vous recherchez la dernière exécution du process "GNX_MDW_Int_F01_
 
 L'utilisation des '*' remplace les '%' comme lors d'un like '%element%' dans une requête SQL.
 
-## 44. Modifier la structure d'un JSON
-<br>
+## <div id="titleSub">44. Modifier la structure d'un JSON</div>
 
 étape 1 : Sélectionner soit l'élément array soit l'élément object
 
@@ -949,8 +892,7 @@ L'utilisation des '*' remplace les '%' comme lors d'un like '%element%' dans une
 
 étape 3 : Cliquer sur l'élément de la bascule
 
-## 45. JSON : La différence entre Array [] et Object {}
-<br>
+## <div id="titleSub">45. JSON : La différence entre Array [] et Object {}</div>
 
 Array [] : un ensemble d'élément sans préciser la variable<br>
 Object {} : un ensemble d'élément sans préciser la variable
@@ -964,8 +906,7 @@ Object {} : un ensemble d'élément sans préciser la variable
   "animal" : "requin"}
 ```
 
-## 46. Accepter l'erreur sur le composant qui récupère des fichiers à l'aide d'un SFTP
-<br>
+## <div id="titleSub">46. Accepter l'erreur sur le composant qui récupère des fichiers à l'aide d'un SFTP</div>
 
 étape 1 : Sélectionner le composant
 
@@ -977,8 +918,7 @@ Object {} : un ensemble d'élément sans préciser la variable
 
 ![image info](./SourcesImages/GetFileFromSFTPErrorAccepted.JPG)
 
-## 47. Réaliser un Direct Bind
-<br>
+## <div id="titleSub">47. Réaliser un Direct Bind</div>
 
 Pour rappel: Un direct bind permet de boucler sur toutes les lignes d'une table en exécutant à chaque fois une procédure
 
@@ -990,8 +930,7 @@ Pour rappel: Un direct bind permet de boucler sur toutes les lignes d'une table 
 
 ![image info](./SourcesImages/LienDirectBind.JPG)
 
-## 48. Zipper un fichier
-<br>
+## <div id="titleSub">48. Zipper un fichier</div>
 
 étape 1 : Se rendre dans la palette et déplier la section File
 
@@ -1005,3 +944,49 @@ Pour rappel: Un direct bind permet de boucler sur toutes les lignes d'une table 
 
 ![image info](./SourcesImages/ZipFiles_propriétés.JPG)
 
+## <div id="titleSub">49. Générer expression "having" dans un mapping</div>
+
+Il faut cocher l'option agregate sur le filtre
+
+exemple de mapping:
+
+![image info](./SourcesImages/Mapping_Aggregation_Having.png)
+
+propriété du filtre:
+
+![image info](./SourcesImages/Mapping_Aggregation_Having_Properties.png)
+
+## <div id="titleSub">50. Activer les rejets sur un mapping</div>
+
+Il y a 3 façons possibles :
+
+1. Selectionner la table de sortie, clique droit et cliquer sur "Enable Rejects Detection"
+
+2. Selectionner la table de sortie et Cliquer sur l'item vert en haut à gauche de la table de sortie
+
+## <div id="titleSub">51. Recycler les données</div>
+
+Se rendre sur les propriétés d'intégration et cliquer sur "Recycle Rejects"
+
+## <div id="titleSub">52. Ajouter un index dans un stage</div>
+
+1. Se rendre dans les propriétés du template de Staging (STG) et activer l'option "Create Stage Indexes"
+
+![image info](./SourcesImages/Stage_Creation_Index_Propriete.png)
+
+2. Se rendre dans les champs concernés par l'index et définir un tag préfixé par "IDX"
+
+![image info](./SourcesImages/Stage_Creation_Index_Tags.png)
+
+## <div id="titleSub">53. Réaliser un cross join</div>
+
+Pour rappel, un cross join est un produit cartésion, c'est à dire:
+
+Soit une table A qui contient 3 lignes et une table B qui contient 4 lignes
+
+```sql
+select tableA_champs1,
+	tableA_champs1
+from	PUBLIC.ADDRESS  ADDRESS
+	cross join PUBLIC.CITY  CITY
+```
