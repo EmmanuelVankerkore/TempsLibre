@@ -165,6 +165,15 @@ Toutes les modifications enregistrées après le commit "commit1" ont été annu
 
 <span id="com">git diff</span>
 
+## <div id="titleSub">22. Annuler l'ajout des modifications avant validation</div>
+
+<span id="com">git reset</span>
+
+## <div id="titleSub">23. Retirer un fichier des modifications avant validation</div>
+
+<span id="com">git reset </span>
+<span id="val">"nom_du_fichier"</span>
+
 ## <div id="titleSub">999. En cas de problème</div>
 
 ## <div id="titleSub2">Lorsque l'on essaie de push, on a le message d'erreur suivant</div>
