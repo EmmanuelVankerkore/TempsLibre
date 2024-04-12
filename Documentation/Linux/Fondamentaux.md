@@ -193,4 +193,18 @@ Utiliser les raccourcis clavier suivants :
 - Copier --> Ctrl + Shift + C
 - Coller --> Ctrl + Shift + V
 
+## <div id="titleSub">24. Consulter l'ensemble des utilisateurs</div>
 
+<span id="com">getent passwd </span>
+
+<span id="not">Voici comment interpréter l'affichage :</span><br>
+
+Username : Password : User ID : Group ID : Description : Home Directory : Shell
+
+## <div id="titleSub">25. Consulter l'ensemble des groupes d'utilisateurs</div>
+
+<span id="com">getent group </span>
+
+<span id="not">Voici comment interpréter l'affichage :</span><br>
+
+Group name : Password : Group ID : Liste des utilisateurs
