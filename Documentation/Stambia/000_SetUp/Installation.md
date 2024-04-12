@@ -29,7 +29,7 @@
 
 # <span id="titleMain">Installer Semarchy xDI</span>
 
-Par Stambia, j'entends "Designer", "Runtime" et "Analytics".
+Par Semarchy, j'entends "Designer", "Runtime" et "Production Analytics".
 
 ## <span id="titleSub">0. Architecture de Semarchy xDI</span>
 <br>
@@ -60,6 +60,10 @@ L' <span id="imp">architecture</span> de Semarchy xDI comprend les 3 composants 
 					    Firefox 61, 
 					    Microsoft Edge 42,
 					    Safari 11}
+* Database<br>
+  - Oracle
+  - PostgreSQL
+  - Microsoft SQL Server
 
 ## <div id="titleSub">1. installer Designer</div>
 
@@ -67,7 +71,29 @@ L' <span id="imp">architecture</span> de Semarchy xDI comprend les 3 composants 
 2. Décomprésser le dossier dans un dossier approprié ( C:\Program Files )
 3. C'est bon, c'est installé
 
-## <div id="titleSub2">1.1. Lancer Stambia (Semarchy Designer)</div>
+## <div id="titleSub2">1.0. Paramétré Stambia (Semarchy Designer)</div>
+
+Ouvrir en mode écriture le fichier "semarchy-xdi-designer-windows.ini"
+
+![image info](./SourcesImages/Fichier_Parametrage.png)
+
+1. Préciser l'emplacement de Java utilisé
+
+```
+-vm
+OpenJDK_11/bin
+```
+
+2. Préciser les capacités en mémoire vive
+
+```
+# Minimum Heap size
+-Xms512m
+# Maximum Heap size.
+-Xmx2048m
+```
+
+## <div id="titleSub2">1.1. Lancer Stambia</div>
 
 Pour lancer Stambia, réaliser un clique droit sur semarchy-xdi-designer-windows.exe
 		en tant qu'administrateur
@@ -146,8 +172,8 @@ Avec le fichier de configuration "engineParameters.xml", on peut configurer tous
 		
 - Les services
 - La sécurité
-- Le dépôt (Repositorie)
-- Le srockage de la journalisation
+- Le dépôt (Repository)
+- Le stockage de la journalisation
 - Des options additionnelles de Java
 
 Exemple de définition de repository : 

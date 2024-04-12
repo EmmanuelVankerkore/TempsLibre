@@ -9,10 +9,11 @@
 
 ## 0. Se connecter à Stambia Analytics
 
-Prod : http://scsmdw01:8080/analytics/stambia
+S'assurer que le service est en cours de fonctionnement, via l'exécution d'un des fichiers suivant :
 
-User : ntico<br>
-Mot de passe : Nt1c0@fr
+
+
+http://localhost:8080/semarchy-xdi-analytics/semarchy
 
 ## 1. Selectionner un type de vue
 <br>
