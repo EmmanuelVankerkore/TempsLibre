@@ -218,3 +218,20 @@ Group name : Password : Group ID : Liste des utilisateurs
 
 <span id="com">groupadd </span>
 <span id="val">nom_du_groupe</span>
+
+## <div id="titleSub">28. Modifier le groupe d'appartenance auquel est rattaché l'utilisateur</div>
+
+<span id="com">usermod </span>
+<span id="par">-g </span>
+<span id="val">groupe</span>
+<span id="val">utilisateur</span>
+
+## <div id="titleSub">29. Supprimer un utilisateur</div>
+
+<span id="com">userdel </span>
+<span id="val">username</span>
+
+## <div id="titleSub">30. Supprimer un groupe d'utilisateurs</div>
+
+<span id="com">groupdel </span>
+<span id="val">groupe</span>
