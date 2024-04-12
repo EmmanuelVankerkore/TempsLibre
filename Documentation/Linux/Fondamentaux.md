@@ -208,3 +208,13 @@ Username : Password : User ID : Group ID : Description : Home Directory : Shell
 <span id="not">Voici comment interpréter l'affichage :</span><br>
 
 Group name : Password : Group ID : Liste des utilisateurs
+
+## <div id="titleSub">26. Ajouter un nouvel utilisateur</div>
+
+<span id="com">adduser </span>
+<span id="val">username</span>
+
+## <div id="titleSub">27. Ajouter un nouveau groupe d'utilisateurs</div>
+
+<span id="com">groupadd </span>
+<span id="val">nom_du_groupe</span>
