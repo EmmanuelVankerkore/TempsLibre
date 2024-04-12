@@ -71,7 +71,8 @@ L'invite de commande peut être ouverte à partir de n'importe quel répertoire.
 <span id="val"> nom_de_l_image</span>
 <br>
 
-<div id="not">"-it" précise que l'on souhaite intéragir avec le conteneur.</div>
+<div id="not">"-it" précise que l'on souhaite intéragir (CLI) avec le conteneur.</div>
+<div id="not">Ctrl + D : pour arrêter l'interaction.</div>
 <br>
 
 ### <div id="titleSub2">Détachement</div>
