@@ -21,6 +21,31 @@ color:#87CEFA }
 
 # <div id="titleMain">Commandes sur Linux</div>
 
+## <div id="titleSub">Compréhension fonctionnelle des dossier Linux natifs</div>
+
+| Répertoire | Description                                                                                     |
+|------------|-------------------------------------------------------------------------------------------------|
+| /bin       | Contient les exécutables de base nécessaires pour démarrer le système et pour une utilisation quotidienne. |
+| /boot      | Contient les fichiers nécessaires au démarrage du système, tels que le noyau Linux, les fichiers de configuration de démarrage et les fichiers d'amorçage. |
+| /dev       | Contient les fichiers de périphériques qui représentent les périphériques matériels connectés au système, tels que les disques, les ports série, les périphériques USB, etc. |
+| /etc       | Contient les fichiers de configuration du système et des applications.                             |
+| /home      | Contient les répertoires personnels des utilisateurs. Chaque utilisateur a un répertoire personnel dans ce dossier où il peut stocker ses fichiers personnels. |
+| /lib       | Contient les bibliothèques partagées nécessaires au fonctionnement des exécutables du système, situées dans /bin et /sbin. |
+| /lib64     | Contient des bibliothèques partagées pour des systèmes d'exploitation 64 bits. |
+| /media     | Utilisé pour monter temporairement des supports de stockage amovibles, tels que des clés USB, des disques durs externes, etc. |
+| /mnt       | Utilisé pour monter temporairement d'autres systèmes de fichiers, tels que des partitions de disque ou des partages réseau. |
+| /opt       | Contient des logiciels supplémentaires installés sur le système, généralement de manière indépendante de la distribution Linux. |
+| /proc      | Un système de fichiers virtuel qui fournit des informations sur les processus en cours d'exécution ainsi que sur certains paramètres du noyau. |
+| /root      | Le répertoire personnel de l'utilisateur root, le superutilisateur du système.                      |
+| /run       | Un système de fichiers temporaire utilisé pour stocker des fichiers et des données qui doivent être accessibles au démarrage du système et pendant son fonctionnement. |
+| /sbin      | Contient les exécutables système, principalement utilisés par l'administrateur du système pour des tâches d'administration. |
+| /srv       | Contient les données spécifiques aux services fournis par le système, tels que les fichiers de site Web, les données de base de données, etc. |
+| /sys       | Un système de fichiers virtuel qui fournit un moyen d'accéder aux informations sur le matériel et le noyau du système. |
+| /tmp       | Un répertoire utilisé pour stocker des fichiers temporaires qui ne doivent pas persister entre les redémarrages du système. |
+| /usr       | Contient la majorité des programmes et fichiers utilisés par les utilisateurs du système, y compris les binaires, les bibliothèques, la documentation, etc. |
+| /var       | Contient des données variables qui peuvent changer au fur et à mesure de l'utilisation du système, telles que les journaux système, les bases de données, les courriers électroniques, etc. |
+
+
 ## <div id="titleSub">1. Créer un fichier vide</div>
 
 <span id="com">touch </span>
@@ -167,3 +192,5 @@ Utiliser le raccourci clavier : Ctrl + C
 Utiliser les raccourcis clavier suivants :
 - Copier --> Ctrl + Shift + C
 - Coller --> Ctrl + Shift + V
+
+
