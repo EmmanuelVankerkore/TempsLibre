@@ -94,6 +94,8 @@ Toutes les modifications enregistrées après le commit "commit1" ont été annu
 
 <span id="com">git stash </span>
 <span id="par">pop</span>
+<span id="com">git restore </span>
+<span id="par">fichier</span>
 
 ## <div id="titleSub">10. Renommer la branche sur laquelle on est actuellement</div>
 
@@ -173,6 +175,15 @@ Toutes les modifications enregistrées après le commit "commit1" ont été annu
 
 <span id="com">git reset </span>
 <span id="val">"nom_du_fichier"</span>
+
+## <div id="titleSub">24. Rédifiner le head sur un ancien commit</div>
+
+<span id="com">git reset </span>
+<span id="val">commit</span>
+
+## <div id="titleSub">800. Quelle différence entre entre Untracked et Unstaged</div>
+
+Les fichiers qui sont untracked ne sont pas connu dans Git alors que les fichiers dans Unstaged sont connu dans git.
 
 ## <div id="titleSub">999. En cas de problème</div>
 
