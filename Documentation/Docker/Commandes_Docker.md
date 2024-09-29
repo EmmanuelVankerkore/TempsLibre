@@ -148,3 +148,10 @@ Nous précisions ici les ports car l'image correspond à un serveur web.
 <span id="par">--force</span>
 <span id="val">nom_de_l_image </span>
 <br>
+
+## <div id="titleSub">12. Afficher l'ensemble des informations sur un conteneur</div>
+
+<span id="com">docker inspect </span>
+<span id="val">nom_conteneur </span>
+<br>
+

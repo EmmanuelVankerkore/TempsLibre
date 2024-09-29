@@ -69,6 +69,7 @@ color:#87CEFA }
 <span id="not"> a pour préciser les fichiers cachés.</span>
 
 
+
 ## <div id="titleSub">4. Rechercher l'emplacement d'un fichier</div>
 
 <span id="com">locate </span>
@@ -235,3 +236,10 @@ Group name : Password : Group ID : Liste des utilisateurs
 
 <span id="com">groupdel </span>
 <span id="val">groupe</span>
+
+## <div id="titleSub">31. Lister l'ensemble des commandes saisies</div>
+
+<span id="com">history </span>
+<span id="val">n</span>
+
+<span id="not">n pour préciser les dernières commandes.</span><br>
