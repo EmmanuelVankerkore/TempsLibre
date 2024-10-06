@@ -181,6 +181,14 @@ Toutes les modifications enregistrées après le commit "commit1" ont été annu
 <span id="com">git reset </span>
 <span id="val">commit</span>
 
+git log pour récupérer la valeur des commit exemple : a38d8472b5c1805f953d5664d3b7fc33b05b268b
+
+## <div id="titleSub">25. Réaliser un ajout de tout et un commit en une seule commande</div>
+
+<span id="com">git commit </span>
+<span id="par">-am</span>
+<span id="val">message</span>
+
 ## <div id="titleSub">800. Quelle différence entre entre Untracked et Unstaged</div>
 
 Les fichiers qui sont untracked ne sont pas connu dans Git alors que les fichiers dans Unstaged sont connu dans git.
