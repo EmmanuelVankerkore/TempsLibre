@@ -69,3 +69,13 @@ color:#87CEFA }
 
 <span id="com">git log</span>
 <span id="par">--raw</span>
+
+## <div id="titleSub">6. Historique des positions de HEAD</div>
+
+# <div id="titleSub2">6.1 Version git</div>
+
+<span id="com">git reflog</span>
+
+# <div id="titleSub2">6.2 Avec une interface graphique plus jolie</div>
+
+<span id="com">gitk --all --reflog</span>
