@@ -39,3 +39,13 @@ color:#87CEFA }
 
 <span id="com">git clone </span>
 <span id="val">"url_GitHub"</span>
+
+## <div id="titleSub">3. Définir son editeur par défaut</div>
+
+<span id="com">git config </span>
+<span id="par"> --global core.editor </span>
+<span id="val">libellé_editeur</span>
+
+<span id="not">Note : <br/></span>
+<span id="not">- "code --wait" pour définir VS Code<br/></span>
+<span id="not">- "notepad" pour définir Notepad</span>
