@@ -94,3 +94,32 @@ color:#87CEFA }
 <span id="com">git checkout </span>
 <span id="par">-D </span>
 <span id="val">branche_existante</span>
+
+## <div id="titleSub">11. Reconstruire la branche active</div>
+
+<span id="com">git rebase </span>
+<span id="par">-i HEAD~</span>
+<span id="val">nombre_commits</span>
+
+<span id="not">Pas d'espace entre le "~" et le nombre de commits</span>
+
+## <div id="titleSub2">11.1 Gestion de l'editeur de script</div>
+
+pick : Utiliser le commit<br/>
+edit : Modifier le message ou le contenu du commit (amend)<br/>
+squach : Fusionner le commit courant avec celui de la ligne précédente<br/>
+drop : supprimer le commit<br/>
+
+<span id="not">Attention : l'ordre d'apparition des commits est du plus ancien au plus récent! Contrairement à git log et gitk</span>
+
+## <div id="titleSub2">11.2 Diviser un commit en plusieurs commits</div>
+
+lorsque l'on a renseigné "edit" sur un commit dans la rédaction du script dans le cadre d'un rebase. Il est préférable d'utiliser l'interface git-gui.<br/>
+
+Suivre dans cet ordre, les instructions suivantes:
+1. Clique gauche sur la case à cocher "Amend the last commit"
+2. Double clique gauche sur le fichier dans la partie Staged pour le passer en unstaged
+3. Selectionner les lignes que l'on veut associer au commit
+4. Clique droit et sélectionner "Stage Lines For Commit"
+5. Insérer le message du commit
+6. Cliquer sur le bouton "Commit"
