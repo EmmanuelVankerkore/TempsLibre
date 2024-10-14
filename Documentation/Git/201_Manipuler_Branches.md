@@ -128,3 +128,8 @@ Suivre dans cet ordre, les instructions suivantes:
 
 <span id="com">git rebase </span>
 <span id="par">--continue</span>
+
+## <div id="titleSub">12. Revenir sur la dernière branche active</div>
+
+<span id="com">git switch </span>
+<span id="par">-</span>
