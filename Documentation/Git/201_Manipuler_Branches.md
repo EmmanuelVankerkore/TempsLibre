@@ -123,3 +123,8 @@ Suivre dans cet ordre, les instructions suivantes:
 4. Clique droit et sélectionner "Stage Lines For Commit"
 5. Insérer le message du commit
 6. Cliquer sur le bouton "Commit"
+
+## <div id="titleSub2">11.3 Indiquer à Git que l'on a terminé ses actions dans le cadre d'un EDIT</div>
+
+<span id="com">git rebase </span>
+<span id="par">--continue</span>
