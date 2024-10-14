@@ -55,3 +55,8 @@ staged --> unstaged
 
 <span id="com">git reset HEAD </span>
 <span id="val">fichier</span>
+
+## <div id="titleSub">6. Création d'un commit à partir du précédent avec renommage</div>
+
+<span id="com">git commit HEAD </span>
+<span id="par">--amend </span>
