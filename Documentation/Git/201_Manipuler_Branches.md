@@ -85,6 +85,12 @@ color:#87CEFA }
 <span id="com">git checkout </span>
 <span id="val">commit</span>
 
-## <div id="titleSub">9. Actions réalisées</div>
+## <div id="titleSub">9. Listes des commits sur la branche active</div>
 
 <span id="com">git reflog </span>
+
+## <div id="titleSub">10. Supprimer sur une branche existante</div>
+
+<span id="com">git checkout </span>
+<span id="par">-D </span>
+<span id="val">branche_existante</span>
