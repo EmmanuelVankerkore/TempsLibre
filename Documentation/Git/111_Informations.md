@@ -79,3 +79,10 @@ color:#87CEFA }
 # <div id="titleSub2">6.2 Avec une interface graphique plus jolie</div>
 
 <span id="com">gitk --all --reflog</span>
+
+<span id="not">- all : permet de visualiser toutes les branches</span>
+<span id="not">- reflog : permet de visualiser les commits orphelins</span>
+
+## <div id="titleSub">7. interface graphique pour réaliser un commit</div>
+
+<span id="com">git-gui</span>
