@@ -78,11 +78,22 @@ color:#87CEFA }
 
 # <div id="titleSub2">6.2 Avec une interface graphique plus jolie</div>
 
-<span id="com">gitk --all --reflog</span>
+<span id="com">gitk </span>
+<span id="par">--all --reflog</span>
 
-<span id="not">- all : permet de visualiser toutes les branches</span>
+<span id="not">- all : permet de visualiser toutes les branches</span><br/>
 <span id="not">- reflog : permet de visualiser les commits orphelins</span>
 
 ## <div id="titleSub">7. interface graphique pour réaliser un commit</div>
 
 <span id="com">git-gui</span>
+
+## <div id="titleSub">8. identifier l'auteur et le commit sur un ensemble de ligne sur un document</div>
+
+<span id="com">git blame <fichier></span>
+<span id="par">-L</span>
+<span id="val">m,n fichier</span>
+
+<span id="not">m : numéro de la ligne de début</span><br/>
+<span id="not">n : numéro de la ligne de fin</span><br/>
+<span id="not">On peut également ajouter un "+" pour désigner non pas un une ligne mais un nombre de lignes après m</span>
