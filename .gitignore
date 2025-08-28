@@ -17,3 +17,9 @@
 /TP/Talend_Data_Integration_PriseEnMain/SAS
 
 /Documentation/Git/token_Github_TempsLibre.txt
+
+venv*/
+
+*.sql
+
+__pycache__/
