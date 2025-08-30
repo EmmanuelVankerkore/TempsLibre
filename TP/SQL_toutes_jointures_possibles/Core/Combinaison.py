@@ -12,3 +12,10 @@ def generate_valid_combinations(jointures: Dict[str, Set[str]], graph: nx.Graph)
             if nx.is_connected(subgraph): # Si tous les noeuds du sous graph sont reliés alors la condition est validé, on dit que le graph est connexe
                 valid_combinations.append("".join(str(subset)))
     return valid_combinations
+
+def get_list_of_int_from_combinations(combinations: List[str]) -> List[List[int]]:
+    list_of_list_int = []
+    for comb in combinations:
+        list_of_list_int.append([int(idx) for idx in comb if str(idx).isdigit()])
+    return list_of_list_int
+

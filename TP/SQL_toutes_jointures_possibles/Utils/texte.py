@@ -19,3 +19,6 @@ def get_where_part(requete: str) -> str:
     index_join_start = get_index_balise_first(requete)
     index_join_end = get_index_balise_second(requete)
     return requete[index_join_start+4:index_join_end]
+
+def replace_str_by_int_from_list(liste: list[int]) -> str:
+    return "".join(chr(65 + idx) for idx in liste) 
