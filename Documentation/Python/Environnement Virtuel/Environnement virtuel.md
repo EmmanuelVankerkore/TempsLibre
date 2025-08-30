@@ -100,3 +100,9 @@ pour rappel: exemple de version 1.5.4
 <span id="par">-m </span>
 <span id="com">pip </span>
 <span id="par">freeze > requirements.txt </span>
+
+## <div id="titleSub">9. Réaliser une installation à partir du requierements.txt</div>
+
+<span id="com">pip install</span>
+<span id="par">-r </span>
+<span id="par">requirements.txt </span>
